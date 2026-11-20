@@ -1,0 +1,21 @@
+{
+  "name": "英语 6 个月回血与雅思通关计划",
+  "short_name": "英语回血计划",
+  "description": "专为上班族 10 分钟开车通勤定制的英语回血与雅思 6.5~7.0+ 打卡计划",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#3b5bdb",
+  "icons": [
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

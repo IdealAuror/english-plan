@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="英语回血计划" />
+  <meta name="theme-color" content="#3b5bdb" id="metaThemeColor" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png" />
+  <link rel="icon" type="image/png" href="icon-180.png" />
+  <title>英语 6 个月回血与雅思通关计划</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-soft: #f1f4f9;
+      --text: #18202c;
+      --text-muted: #5f6c80;
+      --border: #e4e8f0;
+      --primary: #3b5bdb;
+      --primary-soft: #eef2ff;
+      --primary-hover: #324dc2;
+      --emerald: #0f9d6e;
+      --emerald-soft: #e6f7f1;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --rose: #e11d48;
+      --rose-soft: #ffe4e6;
+      --purple: #7c3aed;
+      --purple-soft: #f3e8ff;
+      --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      --radius: 16px;
+      --tabbar-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f141e;
+      --surface: #181f2c;
+      --surface-soft: #20293a;
+      --text: #eef2f7;
+      --text-muted: #98a4b8;
+      --border: #2a3447;
+      --primary: #6c8cff;
+      --primary-soft: rgba(108, 140, 255, 0.14);
+      --primary-hover: #85a0ff;
+      --emerald: #34d399;
+      --emerald-soft: rgba(52, 211, 153, 0.14);
+      --amber: #fbbf24;
+      --amber-soft: rgba(251, 191, 36, 0.14);
+      --rose: #fb7185;
+      --rose-soft: rgba(251, 113, 133, 0.14);
+      --purple: #a78bfa;
+      --purple-soft: rgba(167, 139, 250, 0.14);
+      --shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+      --tabbar-bg: rgba(24, 31, 44, 0.92);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: calc(84px + env(safe-area-inset-bottom));
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 18px 16px;
+    }
+
+    /* iOS Add to Home Screen Tip Banner */
+    .ios-install-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--primary);
+      border-radius: 14px;
+      padding: 11px 14px;
+      margin-bottom: 14px;
+      font-size: 0.84rem;
+      box-shadow: var(--shadow);
+    }
+
+    .ios-install-banner.show { display: flex; }
+
+    .ios-install-close {
+      background: var(--surface-soft);
+      border: none;
+      color: var(--text-muted);
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* Header / Hero */
+    .hero {
+      background: linear-gradient(135deg, #273c9c 0%, #3b5bdb 52%, #4c6ef5 100%);
+      color: #fff;
+      border-radius: 22px;
+      padding: 24px 24px 22px;
+      box-shadow: 0 12px 32px rgba(59, 91, 219, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .hero {
+      background: linear-gradient(135deg, #1b285c 0%, #273d8c 55%, #344ea8 100%);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .hero p {
+      opacity: 0.92;
+      font-size: 0.93rem;
+      max-width: 650px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 10px;
+      padding: 7px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.15s;
+    }
+
+    .hero-btn:hover { background: rgba(255, 255, 255, 0.26); }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.16);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      padding: 11px 13px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .stat-label {
+      font-size: 0.76rem;
+      opacity: 0.86;
+    }
+
+    .stat-value {
+      font-size: 1.38rem;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    /* Desktop Sticky Tabs */
+    .nav-wrap {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      margin: 18px 0;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover { color: var(--text); background: var(--surface-soft); }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(59, 91, 219, 0.25);
+    }
+
+    /* Mobile Bottom Native-Style Tab Bar */
+    .mobile-tabbar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: var(--tabbar-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid var(--border);
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+
+    .mobile-tab-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 5px 4px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .mobile-tab-btn .icon { font-size: 1.2rem; line-height: 1.2; }
+    .mobile-tab-btn.active { color: var(--primary); background: var(--primary-soft); }
+
+    .tab-panel { display: none; animation: fadeIn 0.2s ease; }
+    .tab-panel.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards & Layout */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .pill-blue { background: var(--primary-soft); color: var(--primary); }
+    .pill-green { background: var(--emerald-soft); color: var(--emerald); }
+    .pill-amber { background: var(--amber-soft); color: var(--amber); }
+    .pill-purple { background: var(--purple-soft); color: var(--purple); }
+    .pill-rose { background: var(--rose-soft); color: var(--rose); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    /* Checklists */
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 14px;
+      background: var(--surface-soft);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .check-item:hover { border-color: var(--primary); }
+
+    .check-item input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .check-item.done {
+      background: var(--emerald-soft);
+      border-color: rgba(15, 157, 110, 0.25);
+    }
+
+    .check-item.done .check-title {
+      text-decoration: line-through;
+      opacity: 0.72;
+    }
+
+    .check-title {
+      font-weight: 700;
+      font-size: 0.94rem;
+      display: block;
+    }
+
+    .check-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* Minimum Viable Banner */
+    .mvp-box {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: var(--amber-soft);
+      border: 1px dashed var(--amber);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mvp-box p {
+      font-size: 0.86rem;
+      color: var(--text);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 9px 15px;
+      font-size: 0.87rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-soft { background: var(--surface-soft); color: var(--text); border: 1px solid var(--border); }
+    .btn-soft:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-amber { background: var(--amber); color: #fff; }
+    .btn-amber:hover { opacity: 0.9; }
+    .btn-danger { background: var(--rose-soft); color: var(--rose); }
+
+    /* Streak Heatmap */
+    .streak-bar {
+      display: grid;
+      grid-template-columns: repeat(14, 1fr);
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .day-dot {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .day-dot.partial { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
+    .day-dot.full { background: var(--emerald); border-color: var(--emerald); color: #fff; }
+    .day-dot.today { box-shadow: 0 0 0 2px var(--primary); }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 10px 11px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--surface-soft);
+    }
+
+    /* Phases */
+    .phase-card { border-left: 4px solid var(--primary); }
+    .phase-card.p2 { border-left-color: var(--emerald); }
+    .phase-card.p3 { border-left-color: var(--amber); }
+    .phase-card.p4 { border-left-color: var(--purple); }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .mini-box {
+      background: var(--surface-soft);
+      border-radius: 12px;
+      padding: 13px 14px;
+    }
+
+    .mini-box h4 {
+      font-size: 0.86rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .mini-box ul, .mini-box ol {
+      padding-left: 17px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .mini-box li { margin-bottom: 4px; }
+
+    /* Grammar Visualizer */
+    .sentence-demo {
+      background: var(--surface-soft);
+      border-radius: 14px;
+      padding: 15px 16px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .sentence-en {
+      font-size: 1rem;
+      line-height: 1.8;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hl-core {
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    .hl-mod {
+      background: var(--amber-soft);
+      color: var(--amber);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .demo-breakdown {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.88rem;
+    }
+
+    .demo-breakdown.open { display: block; }
+
+    /* Form Inputs */
+    .input-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    input[type="text"], input[type="number"], input[type="date"], textarea {
+      background: var(--surface-soft);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 16px; /* Prevents iOS Safari zoom on input focus */
+      font-family: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus { border-color: var(--primary); }
+
+    textarea {
+      width: 100%;
+      min-height: 82px;
+      resize: vertical;
+    }
+
+    .note-item {
+      background: var(--surface-soft);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .note-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Progress Bar */
+    .progress-track {
+      height: 10px;
+      background: var(--surface-soft);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--emerald));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Chart */
+    .chart-box {
+      width: 100%;
+      background: var(--surface-soft);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 760px) {
+      .nav-wrap { display: none; }
+      .mobile-tabbar { display: grid; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-2, .phase-grid { grid-template-columns: 1fr; }
+      .streak-bar { grid-template-columns: repeat(7, 1fr); }
+      .hero { padding: 18px 16px; border-radius: 18px; }
+      .hero h1 { font-size: 1.32rem; }
+      .card { padding: 16px; }
+      .container { padding: 14px 12px; }
+    }
+
+    @media print {
+      .nav-wrap, .mobile-tabbar, .ios-install-banner, .hero-actions, .btn, .mvp-box button, .input-row, .footer-bar button { display: none !important; }
+      .tab-panel { display: block !important; page-break-inside: avoid; }
+      body { background: #fff; color: #000; padding: 0; }
+      .card { box-shadow: none; border: 1px solid #ccc; }
+      .demo-breakdown { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- iOS Safari Add to Home Screen Tip -->
+    <div class="ios-install-banner" id="iosBanner">
+      <span>📱 <strong>iPhone 建议：</strong>点 Safari 底部「分享 ⬆️」→「添加到主屏幕」，即可像独立 App 一样离线秒开并保存打卡！</span>
+      <button class="ios-install-close" onclick="dismissIosBanner()" aria-label="关闭">✕</button>
+    </div>
+
+    <!-- Hero Dashboard -->
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <h1>英语 6 个月回血与雅思通关计划</h1>
+          <p>专为「曾有 8000+ 词汇底子 · 白天上班 · iPhone + 单程开车 10 分钟」定制：先唤醒旧词与语感、破除语法盲区，再顺势拿下日常沟通与雅思 6.5~7.0+。</p>
+        </div>
+        <div class="hero-actions">
+          <button class="hero-btn" onclick="toggleTheme()" id="themeBtn">🌙 深色</button>
+          <button class="hero-btn" onclick="window.print()">🖨️ 存PDF</button>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="badge">🧠 8000+ 休眠词唤醒</span>
+        <span class="badge">🚗 10分钟开车闭环</span>
+        <span class="badge">📱 iPhone 专属配置</span>
+        <span class="badge">🎯 日常沟通 + 雅思 6.5~7.0+</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">今日任务完成</div>
+          <div class="stat-value" id="statToday">0 / 4</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">累计打卡天数</div>
+          <div class="stat-value" id="statTotalDays">0 天</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">当前连续打卡</div>
+          <div class="stat-value" id="statStreak">0 天</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">最新词汇量</div>
+          <div class="stat-value" id="statVocab">1,500</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Desktop Sticky Navigation Tabs -->
+    <nav class="nav-wrap">
+      <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="daily" onclick="switchTab('daily')">📅 今日打卡 & 第1周</button>
+        <button class="tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">🗺️ 6个月四阶段</button>
+        <button class="tab-btn" data-tab="grammar" onclick="switchTab('grammar')">🧩 长难句急救</button>
+        <button class="tab-btn" data-tab="tools" onclick="switchTab('tools')">📈 iPhone配置 & 曲线</button>
+      </div>
+    </nav>
+
+    <!-- TAB 1: DAILY & WEEK 1 -->
+    <section id="tab-daily" class="tab-panel active">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">✅ 今日「10 + 10 + 15」极简打卡</div>
+          <span class="pill pill-blue" id="todayDateLabel"></span>
+        </div>
+
+        <div class="check-list" id="dailyTaskList">
+          <label class="check-item" data-daily="am_drive">
+            <input type="checkbox" onchange="toggleDaily('am_drive', this.checked)" />
+            <div>
+              <span class="check-title">🚗 早通勤（10 分钟）：听 1 期短音频 + 大声跟念几句</span>
+              <span class="check-desc">上车连蓝牙自动放 BBC 6 Minute English（后期换剑桥雅思听力），剩 4 分钟顺嘴跟念。</span>
+            </div>
+          </label>
+
+          <label class="check-item" data-daily="vocab">
+            <input type="checkbox" onchange="toggleDaily('vocab', this.checked)" />
+            <div>
+              <span class="check-title">📱 午休 / 晚间（10 分钟）：快速筛 20 个雅思核心词</span>
+              <span class="check-desc">用「不背单词 / 墨墨」筛词——还认识的旧词直接斩掉，只留彻底忘掉的词进复习池。</span>
+            </div>
+          </label>
+
+          <label class="check-item" data-daily="read_grammar">
+            <input type="checkbox" onchange="toggleDaily('read_grammar', this.checked)" />
+            <div>
+              <span class="check-title">📖 午休 / 晚间（5~10 分钟）：扫一眼音频原文 + 拆 1 句长句</span>
+              <span class="check-desc">在「每日英语听力」里快速看一眼早上没听清的地方，记下 1~2 个实用口语短语。</span>
+            </div>
+          </label>
+
+          <label class="check-item" data-daily="pm_drive">
+            <input type="checkbox" onchange="toggleDaily('pm_drive', this.checked)" />
+            <div>
+              <span class="check-title">🎙️ 晚通勤（10 分钟）：复听音频 或 免提语音 AI 聊 8 分钟</span>
+              <span class="check-desc">平时复听早上那期（看过原文后特别通透）；每周挑 2~4 天发车前开语音 AI 随便聊今天上班的事。</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="mvp-box">
+          <p><strong>🛡️ 加班防断链保底线：</strong>今天太累没精力？只要完成了「听完 1 期 6 分钟播客」或「清完当天旧词复习」，点右侧保底打卡，不断链就赢了！</p>
+          <button class="btn btn-amber" onclick="toggleMvpToday()" id="mvpBtn">⚡ 今日保底打卡</button>
+        </div>
+
+        <div style="margin-top: 18px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.83rem; color:var(--text-muted); flex-wrap:wrap; gap:6px;">
+            <span>近 14 天足迹（绿=完成≥3项，黄=保底/部分）</span>
+            <span id="streakHint"></span>
+          </div>
+          <div class="streak-bar" id="streakBar"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <!-- Setup Checklist -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🛠️ iPhone 启动准备（15 分钟）</div>
+            <span class="pill pill-purple" id="setupProgressPill">0/6</span>
+          </div>
+          <div class="check-list">
+            <label class="check-item" data-key="setup_1">
+              <input type="checkbox" onchange="toggleKey('setup_1', this.checked)" />
+              <div>
+                <span class="check-title">在自带「播客」和「每日英语听力」关注 BBC 6 Minute English</span>
+                <span class="check-desc">Apple Podcasts 配合 CarPlay/蓝牙最稳，每日英语听力用来看原文。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="setup_6">
+              <input type="checkbox" onchange="toggleKey('setup_6', this.checked)" />
+              <div>
+                <span class="check-title">设好 iPhone「快捷指令自动化」：连车载蓝牙自动开播</span>
+                <span class="check-desc">详细步骤在「iPhone配置」页，一发动车子自动响，彻底免掏手机！</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="setup_2">
+              <input type="checkbox" onchange="toggleKey('setup_2', this.checked)" />
+              <div>
+                <span class="check-title">装「不背单词 / 墨墨」，选「雅思核心词」并放桌面小组件</span>
+                <span class="check-desc">每天新词只设 20 个，零压力持续筛旧词。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="setup_3">
+              <input type="checkbox" onchange="toggleKey('setup_3', this.checked)" />
+              <div>
+                <span class="check-title">准备好免提语音 AI（豆包 / ChatGPT）</span>
+                <span class="check-desc">测试好连车载蓝牙免提对话（发车前点开，行车不碰手机）。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="setup_4">
+              <input type="checkbox" onchange="toggleKey('setup_4', this.checked)" />
+              <div>
+                <span class="check-title">B 站收藏「英语兔：一个视频说清整个英语语法体系」</span>
+                <span class="check-desc">约 1 小时，留着第 1 个周末分两次刷完。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="setup_5">
+              <input type="checkbox" onchange="toggleKey('setup_5', this.checked)" />
+              <div>
+                <span class="check-title">用 TestYourVocab 测基线并填进「词汇曲线」</span>
+                <span class="check-desc">2 分钟测完，一个月后回头看涨幅超有成就感。</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Week 1 Checklist -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🚀 第一周直接照抄清单（Day 1–7）</div>
+            <span class="pill pill-green" id="week1ProgressPill">0/7</span>
+          </div>
+          <div class="check-list">
+            <label class="check-item" data-key="w1_d1">
+              <input type="checkbox" onchange="toggleKey('w1_d1', this.checked)" />
+              <div>
+                <span class="check-title">Day 1：跑通第一次闭环</span>
+                <span class="check-desc">早车听 1 期 6 Minute English → 午休筛 20 词+扫原文 → 晚车复听。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d2">
+              <input type="checkbox" onchange="toggleKey('w1_d2', this.checked)" />
+              <div>
+                <span class="check-title">Day 2：巩固耳朵手感</span>
+                <span class="check-desc">换下一期音频（或昨天没听透就再听同一期）+ 筛 20 词 + 跟念。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d3">
+              <input type="checkbox" onchange="toggleKey('w1_d3', this.checked)" />
+              <div>
+                <span class="check-title">Day 3：首次开口破冰 🎙️</span>
+                <span class="check-desc">下班车上开语音 AI，用英文随便聊 8 分钟「今天上班怎么样」。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d4">
+              <input type="checkbox" onchange="toggleKey('w1_d4', this.checked)" />
+              <div>
+                <span class="check-title">Day 4：轻松节奏保持</span>
+                <span class="check-desc">正常跑「早听 + 午筛词看原文 + 晚复听大声跟读」。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d5">
+              <input type="checkbox" onchange="toggleKey('w1_d5', this.checked)" />
+              <div>
+                <span class="check-title">Day 5：第二次开口聊周末</span>
+                <span class="check-desc">下班车上和语音 AI 聊 8 分钟「周末有什么打算/最近在看什么」。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d6">
+              <input type="checkbox" onchange="toggleKey('w1_d6', this.checked)" />
+              <div>
+                <span class="check-title">Day 6（周六）：语法全局扫盲（上）</span>
+                <span class="check-desc">看「英语兔 1 小时语法总览」前半段（30 分钟）+ 刷当天 20 词。</span>
+              </div>
+            </label>
+            <label class="check-item" data-key="w1_d7">
+              <input type="checkbox" onchange="toggleKey('w1_d7', this.checked)" />
+              <div>
+                <span class="check-title">Day 7（周日）：语法扫盲（下）+ 实操拆句</span>
+                <span class="check-desc">看完视频后半段（30 分钟）+ 挑本周播客里 2~3 个长句用「找车头法」拆一遍。</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Timetable Reference -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🕒 工作日时间分配一览（总计 35~45 分钟）</div>
+          <span class="pill pill-blue">零整块时间消耗</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>时段</th>
+                <th>时长</th>
+                <th>做什么</th>
+                <th>注意要点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>早开车通勤</strong></td>
+                <td>10 分钟</td>
+                <td>完整听完 1 期短音频 + 剩 4 分钟跟念</td>
+                <td>用 iPhone 自动化开播，行车全程不看屏</td>
+              </tr>
+              <tr>
+                <td><strong>午休 / 晚间</strong></td>
+                <td>10 分钟</td>
+                <td>不背单词 / 墨墨快速筛 20 个雅思核心词</td>
+                <td>有印象的直接斩掉，别跟旧词死磕</td>
+              </tr>
+              <tr>
+                <td><strong>午休 / 晚间</strong></td>
+                <td>5~10 分钟</td>
+                <td>扫一眼早上音频原文 + 挑 1 句长句找主干</td>
+                <td>只记 1~2 个说话能用上的短语，不逐字精析</td>
+              </tr>
+              <tr>
+                <td><strong>晚开车通勤</strong></td>
+                <td>10 分钟</td>
+                <td>复听早上音频 或 免提语音 AI 聊 8 分钟</td>
+                <td>聊天只求不断片，语法错了别停下来纠结</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: 6-MONTH ROADMAP -->
+    <section id="tab-roadmap" class="tab-panel">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🎯 6 个月总里程碑进度</div>
+          <span class="pill pill-green" id="milestoneCount">0 / 12 项已达成</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="milestoneProgressFill"></div>
+        </div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="card phase-card">
+        <div class="card-header">
+          <div class="card-title">第一阶段（第 1 个月）：唤醒底子 + 语法扫盲</div>
+          <span class="pill pill-blue">目标词汇：3,500 ~ 4,500</span>
+        </div>
+        <p style="font-size:0.89rem; color:var(--text-muted);">重点不是学新知识，而是把沉睡的旧词、语感快速激活，并用 1 小时彻底打掉「害怕语法」的心理阴影。</p>
+        <div class="phase-grid">
+          <div class="mini-box">
+            <h4>🚗 车上（20 分钟/天）</h4>
+            <ul>
+              <li>早：听 1 期 BBC 6 Minute English（英音+社会/科技话题，天然对标雅思）。</li>
+              <li>晚：复听同一期并大声跟读；每周挑 2 天换免提语音 AI 聊 8 分钟日常。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📱 午休/晚间（15 分钟/天）</h4>
+            <ul>
+              <li>10 分钟：筛 20 个雅思核心词（认识就斩）。</li>
+              <li>5 分钟：扫一眼播客原文，把没听清的词标出来。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🛋️ 周末（1 小时）</h4>
+            <ul>
+              <li>第 1 周末刷完「英语兔 1 小时语法总览」。</li>
+              <li>第 2~4 周末：每周亲手拆 3 个长难句 + 看半集英文字幕轻喜剧。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="check-list">
+          <label class="check-item" data-key="m_p1_1">
+            <input type="checkbox" onchange="toggleKey('m_p1_1', this.checked)" />
+            <div><span class="check-title">验收 1：刷完「英语兔 1 小时语法总览」，理解「主干 + 修饰」逻辑</span></div>
+          </label>
+          <label class="check-item" data-key="m_p1_2">
+            <input type="checkbox" onchange="toggleKey('m_p1_2', this.checked)" />
+            <div><span class="check-title">验收 2：不看文本能听懂 BBC 6 Minute English 70% 以上大意</span></div>
+          </label>
+          <label class="check-item" data-key="m_p1_3">
+            <input type="checkbox" onchange="toggleKey('m_p1_3', this.checked)" />
+            <div><span class="check-title">验收 3：TestYourVocab 词汇量回升至 3,500+，且和 AI 聊过至少 6 次</span></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="card phase-card p2">
+        <div class="card-header">
+          <div class="card-title">第二阶段（第 2~3 个月）：打通日常沟通 + 无痛衔接雅思</div>
+          <span class="pill pill-green">目标词汇：5,500 ~ 6,500</span>
+        </div>
+        <p style="font-size:0.89rem; color:var(--text-muted);">从「听懂教学播客」过渡到「听懂真实生活对话、顺畅表达自己」，同时用雅思 Part 1/2 生活场景一举两得。</p>
+        <div class="phase-grid">
+          <div class="mini-box">
+            <h4>🚗 车上（20 分钟/天）</h4>
+            <ul>
+              <li>早：切换为<strong>剑桥雅思听力 Part 1 & 2</strong>（租房/看病/旅游/办卡，超实用），穿插 All Ears English。</li>
+              <li>晚：语音 AI 聊提到每周 3~4 天，结合「雅思哥」Part 1 生活话题让 AI 追问你。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📱 午休/晚间（20 分钟/天）</h4>
+            <ul>
+              <li>10 分钟：继续刷完雅思核心 3500 词第一轮。</li>
+              <li>10 分钟：泛读感兴趣的英文新闻/原版书（如 Atomic Habits 每天 2~3 页），练习不逐词翻译。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🛋️ 周末（1~1.5 小时）</h4>
+            <ul>
+              <li>做 1 篇剑桥雅思阅读（不卡表，专练长难句理解与回血速度）。</li>
+              <li>精听 1 段本周车上听模糊的 Part 1/2 音频。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="check-list">
+          <label class="check-item" data-key="m_p2_1">
+            <input type="checkbox" onchange="toggleKey('m_p2_1', this.checked)" />
+            <div><span class="check-title">验收 4：能用英文和 AI 连续聊 10 分钟日常话题不断片（允许小语法错）</span></div>
+          </label>
+          <label class="check-item" data-key="m_p2_2">
+            <input type="checkbox" onchange="toggleKey('m_p2_2', this.checked)" />
+            <div><span class="check-title">验收 5：剑桥雅思听力 Part 1 & Part 2 正确率达到 75% 以上</span></div>
+          </label>
+          <label class="check-item" data-key="m_p2_3">
+            <input type="checkbox" onchange="toggleKey('m_p2_3', this.checked)" />
+            <div><span class="check-title">验收 6：过完一遍雅思核心词书，词汇测试回升至 5,500+</span></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="card phase-card p3">
+        <div class="card-header">
+          <div class="card-title">第三阶段（第 4~5 个月）：提升表达深度 + 雅思听说读成型</div>
+          <span class="pill pill-amber">模考目标：听/读 6.5~7.5</span>
+        </div>
+        <p style="font-size:0.89rem; color:var(--text-muted);">你曾经 8000 词的高阶阅读与听力潜力会在这个阶段全面爆发，开始进入真正的「观点表达」与同义替换训练。</p>
+        <div class="phase-grid">
+          <div class="mini-box">
+            <h4>🚗 车上（20 分钟/天）</h4>
+            <ul>
+              <li>早：听<strong>剑桥雅思听力 Part 3 & 4</strong>（学术讨论与科普）或 NPR News Now（5 分钟正常语速新闻）。</li>
+              <li>晚：练雅思口语 <strong>Part 2（2 分钟独立讲故事）+ Part 3（观点讨论）</strong>，车里自说自话再让 AI 润色。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📱 午休/晚间（25 分钟/天）</h4>
+            <ul>
+              <li>10 分钟：专攻高频错词 + 雅思同义替换词。</li>
+              <li>15 分钟：精刷剑桥雅思阅读真题（剑 15~19），每周 2~3 篇。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🛋️ 周末（1.5 小时）</h4>
+            <ul>
+              <li>卡时间做 1 套完整的雅思「听力 + 阅读」。</li>
+              <li>预热写作：精读 Simon 雅思大小作文范文各 1 篇，只学清晰结构，不背生僻词。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="check-list">
+          <label class="check-item" data-key="m_p3_1">
+            <input type="checkbox" onchange="toggleKey('m_p3_1', this.checked)" />
+            <div><span class="check-title">验收 7：能针对生活/职场/社会话题连续用英文口头阐述 2 分钟</span></div>
+          </label>
+          <label class="check-item" data-key="m_p3_2">
+            <input type="checkbox" onchange="toggleKey('m_p3_2', this.checked)" />
+            <div><span class="check-title">验收 8：卡时间模考雅思听力和阅读均稳定在 6.5~7.5 分</span></div>
+          </label>
+          <label class="check-item" data-key="m_p3_3">
+            <input type="checkbox" onchange="toggleKey('m_p3_3', this.checked)" />
+            <div><span class="check-title">验收 9：读完至少 8 篇 Simon 大小作文范文，掌握四段式写作骨架</span></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="card phase-card p4">
+        <div class="card-header">
+          <div class="card-title">第四阶段（第 6 个月）：考前冲刺（写作专项 + 全真模考）</div>
+          <span class="pill pill-purple">最终目标：流利沟通 + 雅思 6.5~7.0+</span>
+        </div>
+        <p style="font-size:0.89rem; color:var(--text-muted);">最后 1 个月集中补齐日常交流练不到的「学术写作」，并用真题模考把能力稳稳转化成成绩单。</p>
+        <div class="phase-grid">
+          <div class="mini-box">
+            <h4>🚗 车上（20 分钟/天）</h4>
+            <ul>
+              <li>把「雅思哥」当季口语题库按人/地/事/物归类。</li>
+              <li>全部套用自己真实的工作和生活经历，车里反复说到脱口而出，拒绝背模板。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📱 晚间（30 分钟/天）</h4>
+            <ul>
+              <li>每周写 <strong>2 篇大作文 + 2 篇小作文</strong>，让 AI 按雅思官方 4 项标准批改并给 7 分范本。</li>
+              <li>其余时间复盘听力和阅读错题本。</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>🛋️ 周末（2.5~3 小时）</h4>
+            <ul>
+              <li>严格按上午 9:00 考场时间完整模考 1 套最新真题（剑 17~19）。</li>
+              <li>训练连续 3 小时的考场专注力。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="check-list">
+          <label class="check-item" data-key="m_p4_1">
+            <input type="checkbox" onchange="toggleKey('m_p4_1', this.checked)" />
+            <div><span class="check-title">验收 10：完成至少 8 篇大作文 + 8 篇小作文写作与 AI 批改复盘</span></div>
+          </label>
+          <label class="check-item" data-key="m_p4_2">
+            <input type="checkbox" onchange="toggleKey('m_p4_2', this.checked)" />
+            <div><span class="check-title">验收 11：过完当季雅思哥全部高频口语话题，并用 AI 模拟过 3 次全真口语</span></div>
+          </label>
+          <label class="check-item" data-key="m_p4_3">
+            <input type="checkbox" onchange="toggleKey('m_p4_3', this.checked)" />
+            <div><span class="check-title">验收 12：完成 3~4 套严格计时的全真模考，自信上考场！</span></div>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: GRAMMAR & LONG SENTENCES -->
+    <section id="tab-grammar" class="tab-panel">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🚂 看懂一切长难句的万能心法：「找车头，剥车厢」</div>
+          <span class="pill pill-amber">零术语 · 1分钟看懂</span>
+        </div>
+        <p style="font-size:0.92rem; margin-bottom:14px;">
+          不用去背「非限定性定语从句」「过去分词作后置定语」这些吓人名词。记住一个本质规律：<br />
+          <strong>英语长句子就像一列火车 = <span class="hl-core">1 个极简车头（谁 + 干了什么）</span> + <span class="hl-mod">一堆往后面贴的补充说明小车厢</span>。</strong>
+        </p>
+
+        <div class="mini-box" style="margin-bottom:16px;">
+          <h4>🔍 怎么一眼认出「小车厢（修饰成分）」的挂钩？就这 4 类信号词：</h4>
+          <ul>
+            <li><strong>关系词挂钩</strong>：<code>which / that / who / where / when</code>（用来给前面的词补细节）</li>
+            <li><strong>介词挂钩</strong>：<code>in / on / of / with / for / by / about</code>（补充时间、地点、方式、对象）</li>
+            <li><strong>动词变形挂钩</strong>：<code>-ing（主动做...的）</code> / <code>-ed（被动...的）</code> / <code>to do（为了...）</code></li>
+            <li><strong>逗号插入语</strong>：两个逗号夹在中间的内容 <code>, ...... ,</code>，阅读时先直接跳过看主干！</li>
+          </ul>
+        </div>
+
+        <h4 style="margin-bottom:10px;">👇 点击下方按钮，练习 3 个典型雅思长难句「剥主干」：</h4>
+
+        <div class="sentence-demo">
+          <div class="sentence-en">
+            The app, which was launched last year, helps busy workers learn English by using short audio clips recorded by native speakers.
+          </div>
+          <button class="btn btn-soft" onclick="toggleDemo('demo1')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <div class="demo-breakdown" id="demo1">
+            <p><span class="hl-core">车头主干</span>：<strong>The app helps busy workers learn English.</strong>（这个 App 帮忙碌上班族学英语。）</p>
+            <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>, which was launched last year,</code> → 补充说明 App（去年上线的）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 2</span>：<code>by using short audio clips</code> → 补充说明怎么学（通过使用短音频）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 3</span>：<code>recorded by native speakers</code> → 补充说明音频（由母语者录制的）</p>
+          </div>
+        </div>
+
+        <div class="sentence-demo">
+          <div class="sentence-en">
+            People who drive to work every day often find it easier to practice speaking because they have a private space without worrying about mistakes.
+          </div>
+          <button class="btn btn-soft" onclick="toggleDemo('demo2')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <div class="demo-breakdown" id="demo2">
+            <p><span class="hl-core">车头主干</span>：<strong>People often find it easier to practice speaking.</strong>（人们常发现练口语更容易。）</p>
+            <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>who drive to work every day</code> → 限定什么人（每天开车上班的人）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 2</span>：<code>because they have a private space</code> → 补充原因（因为他们有私密空间）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 3</span>：<code>without worrying about mistakes</code> → 补充状态（不用担心犯错）</p>
+          </div>
+        </div>
+
+        <div class="sentence-demo">
+          <div class="sentence-en">
+            A recent study published in a leading journal suggests that spending just 20 minutes a day on listening can significantly improve fluency over six months.
+          </div>
+          <button class="btn btn-soft" onclick="toggleDemo('demo3')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <div class="demo-breakdown" id="demo3">
+            <p><span class="hl-core">车头主干</span>：<strong>A recent study suggests that [spending 20 minutes can improve fluency].</strong>（一项近期研究表明，每天花 20 分钟能提升流利度。）</p>
+            <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>published in a leading journal</code> → 补充研究出处（发表在顶级期刊上的）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 2</span>：<code>just ... a day on listening</code> → 补充每天花 20 分钟干嘛（在听力上）</p>
+            <p style="margin-top:4px;"><span class="hl-mod">车厢 3</span>：<code>significantly ... over six months</code> → 补充程度与周期（在六个月内显著地）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">💬 日常沟通 & 雅思口语最实用的 5 组高频骨架</div>
+          <span class="pill pill-green">口语根本不用长难句</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>想表达的意思</th>
+                <th>顺口连接词</th>
+                <th>地道短例句</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>解释原因</strong></td>
+                <td><code>because</code> / <code>that's why</code></td>
+                <td>I drive to work <strong>because</strong> it only takes 10 minutes.</td>
+              </tr>
+              <tr>
+                <td><strong>转折对比</strong></td>
+                <td><code>but</code> / <code>though</code></td>
+                <td>My English got rusty, <strong>but</strong> it's coming back fast.</td>
+              </tr>
+              <tr>
+                <td><strong>举个例子</strong></td>
+                <td><code>for example</code> / <code>like</code></td>
+                <td>I listen to short podcasts, <strong>like</strong> 6 Minute English.</td>
+              </tr>
+              <tr>
+                <td><strong>时间/条件</strong></td>
+                <td><code>when</code> / <code>while</code> / <code>if</code></td>
+                <td><strong>When</strong> I'm driving, I like to talk to myself in English.</td>
+              </tr>
+              <tr>
+                <td><strong>补充评价</strong></td>
+                <td><code>which is...</code>（万能加分句）</td>
+                <td>I practice 30 minutes a day, <strong>which is</strong> really manageable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: IPHONE SETUP, TOOLS, VOCAB CHART & NOTES -->
+    <section id="tab-tools" class="tab-panel">
+      <!-- iPhone Exclusive Setup -->
+      <div class="card" style="border-left: 4px solid var(--primary);">
+        <div class="card-header">
+          <div class="card-title">📱 iPhone + 开车 10 分钟专属神级配置</div>
+          <span class="pill pill-blue">上车自动开播 · 零阻力</span>
+        </div>
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>⚡ 快捷指令自动化（强烈推荐！）</h4>
+            <ol>
+              <li>打开 iPhone 自带 <strong>「快捷指令」→ 底部「自动化」→ 右上角 `+`</strong></li>
+              <li>选 <strong>「蓝牙」</strong>（选中你的车机蓝牙）或 <strong>「CarPlay 车载」→「立即运行」</strong></li>
+              <li>添加操作：搜 <strong>「播放播客」→ 选择 BBC 6 Minute English</strong></li>
+              <li>以后一发动车子连上蓝牙，6 分钟英语自动响，连手机都不用掏！</li>
+            </ol>
+          </div>
+          <div class="mini-box">
+            <h4>📲 App Store 极简装机（3 个足矣）</h4>
+            <ul>
+              <li><strong>系统自带「播客」</strong>：直接订阅 6 Minute English / All Ears English / NPR News Now，完美适配 CarPlay。</li>
+              <li><strong>每日英语听力</strong>：午休看播客中英原文 + 后期刷剑桥雅思听力真题。</li>
+              <li><strong>不背单词 / 墨墨</strong>：选「雅思核心词」，放 iPhone 桌面小组件提醒筛词。</li>
+              <li><strong>豆包 / ChatGPT</strong>：下班发车前开语音免提模式，边开边聊 8 分钟。</li>
+              <li><strong>添加到主屏幕</strong>：在 Safari 点底部分享 ⬆️ →「添加到主屏幕」，本计划立刻变 iPhone 独立 App！</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vocab Tracker -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">📈 词汇量回血曲线（每月用 TestYourVocab 测一次）</div>
+          <span class="pill pill-green">见证 1.5k → 7k+ 唤醒</span>
+        </div>
+        <div class="input-row">
+          <input type="date" id="vocabDateInput" />
+          <input type="number" id="vocabScoreInput" placeholder="输入词汇量，如 3800" min="500" max="30000" step="100" />
+          <input type="text" id="vocabNoteInput" placeholder="备注（如：第1个月末）" style="flex:1; min-width:150px;" />
+          <button class="btn btn-primary" onclick="addVocabRecord()">+ 记录成绩</button>
+        </div>
+        <div class="chart-box" id="vocabChartBox"></div>
+        <div id="vocabTableWrap"></div>
+      </div>
+
+      <!-- Resource Library -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🎒 分阶段音频与雅思备考资源</div>
+          <span class="pill pill-blue">按阶段替换，不贪多</span>
+        </div>
+        <div class="grid-2">
+          <div class="mini-box">
+            <h4>🚗 10 分钟以内开车黄金音频</h4>
+            <ul>
+              <li><strong>第 1 月回血</strong>：BBC 6 Minute English（6分钟，英音+词汇复盘）</li>
+              <li><strong>第 2~3 月生活</strong>：剑桥雅思听力 Part 1 & 2 / All Ears English</li>
+              <li><strong>第 4~5 月进阶</strong>：NPR News Now（5分钟快讯）/ 剑桥听力 Part 3 & 4</li>
+              <li><strong>高密加餐</strong>：Scientific American 60-Second Science（1~2分钟/篇）</li>
+            </ul>
+          </div>
+          <div class="mini-box">
+            <h4>📚 语法与雅思专项宝藏</h4>
+            <ul>
+              <li><strong>语法速通</strong>：B站「英语兔 1小时语法总览」 / 书《文法俱乐部》</li>
+              <li><strong>口语题库</strong>：雅思哥 App（第 2 个月再装，免费看当季口语题库）</li>
+              <li><strong>真题套卷</strong>：剑桥雅思真题 14~19（听/读核心抓同义替换）</li>
+              <li><strong>写作框架</strong>：Simon 雅思写作范文（逻辑极简，极易模仿）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Sentence & Phrase Notebook -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">📝 我的地道表达 & 待拆长难句备忘录</div>
+          <span class="pill pill-purple">自动保存在本机</span>
+        </div>
+        <div style="margin-bottom:12px;">
+          <textarea id="noteInput" placeholder="把平时在播客或阅读里遇到的好表达、看不懂的长难句贴在这里..."></textarea>
+          <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+            <button class="btn btn-primary" onclick="addNote()">+ 存进备忘录</button>
+          </div>
+        </div>
+        <div id="notesList"></div>
+      </div>
+    </section>
+
+    <!-- Footer Data Management -->
+    <footer class="footer-bar">
+      <div>💾 打卡、词汇曲线与笔记自动保存在当前设备本地（支持导出备份跨设备同步）。</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-soft" onclick="exportData()">📤 导出备份</button>
+        <button class="btn btn-soft" onclick="document.getElementById('importFile').click()">📥 导入备份</button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)" />
+        <button class="btn btn-danger" onclick="resetAll()">🗑️ 重置</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile iPhone Bottom Tab Bar -->
+  <nav class="mobile-tabbar" aria-label="底部导航">
+    <button class="mobile-tab-btn active" data-tab="daily" onclick="switchTab('daily')">
+      <span class="icon">📅</span><span>打卡</span>
+    </button>
+    <button class="mobile-tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">
+      <span class="icon">🗺️</span><span>路线图</span>
+    </button>
+    <button class="mobile-tab-btn" data-tab="grammar" onclick="switchTab('grammar')">
+      <span class="icon">🧩</span><span>长难句</span>
+    </button>
+    <button class="mobile-tab-btn" data-tab="tools" onclick="switchTab('tools')">
+      <span class="icon">📱</span><span>iPhone/记录</span>
+    </button>
+  </nav>
+
+  <script>
+    const STORAGE_KEY = 'english_6m_ielts_plan_v1';
+
+    function getTodayStr() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${y}-${m}-${day}`;
+    }
+
+    function defaultState() {
+      return {
+        theme: 'light',
+        iosBannerDismissed: false,
+        checks: {},
+        dailyLog: {},
+        vocabRecords: [
+          { date: getTodayStr(), score: 1500, note: '初始估测基线（准备用 TestYourVocab 复测）' }
+        ],
+        notes: [
+          {
+            id: Date.now(),
+            text: '示例短语：get rusty（生疏了）→ My English got a bit rusty, but it is coming back quickly.',
+            date: getTodayStr()
+          }
+        ]
+      };
+    }
+
+    let state = loadState();
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return defaultState();
+        const parsed = JSON.parse(raw);
+        return Object.assign(defaultState(), parsed);
+      } catch (e) {
+        return defaultState();
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+      renderAll();
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('[data-tab]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-tab') === tabId);
+      });
+      document.getElementById('tab-' + tabId).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleTheme() {
+      state.theme = state.theme === 'dark' ? 'light' : 'dark';
+      saveState();
+    }
+
+    function applyTheme() {
+      const isDark = state.theme === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.getElementById('themeBtn').textContent = isDark ? '☀️ 浅色' : '🌙 深色';
+      const meta = document.getElementById('metaThemeColor');
+      if (meta) meta.setAttribute('content', isDark ? '#0f141e' : '#3b5bdb');
+    }
+
+    function checkIosBanner() {
+      const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+      const banner = document.getElementById('iosBanner');
+      if (isIos && !isStandalone && !state.iosBannerDismissed) {
+        banner.classList.add('show');
+      } else {
+        banner.classList.remove('show');
+      }
+    }
+
+    function dismissIosBanner() {
+      state.iosBannerDismissed = true;
+      saveState();
+    }
+
+    function getTodayLog() {
+      const today = getTodayStr();
+      if (!state.dailyLog[today]) {
+        state.dailyLog[today] = { am_drive: false, vocab: false, read_grammar: false, pm_drive: false, mvp: false };
+      }
+      return state.dailyLog[today];
+    }
+
+    function toggleDaily(taskKey, checked) {
+      const log = getTodayLog();
+      log[taskKey] = checked;
+      saveState();
+    }
+
+    function toggleMvpToday() {
+      const log = getTodayLog();
+      log.mvp = !log.mvp;
+      saveState();
+    }
+
+    function toggleKey(key, checked) {
+      state.checks[key] = checked;
+      saveState();
+    }
+
+    function toggleDemo(id) {
+      document.getElementById(id).classList.toggle('open');
+    }
+
+    function isDayCheckedIn(log) {
+      if (!log) return 0;
+      const count = ['am_drive', 'vocab', 'read_grammar', 'pm_drive'].filter(k => log[k]).length;
+      if (count >= 3) return 2;
+      if (count >= 1 || log.mvp) return 1;
+      return 0;
+    }
+
+    function computeStats() {
+      const todayLog = getTodayLog();
+      const todayCount = ['am_drive', 'vocab', 'read_grammar', 'pm_drive'].filter(k => todayLog[k]).length;
+
+      let totalDays = 0;
+      Object.values(state.dailyLog).forEach(log => {
+        if (isDayCheckedIn(log) > 0) totalDays++;
+      });
+
+      let streak = 0;
+      const d = new Date();
+      for (let i = 0; i < 365; i++) {
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        const status = isDayCheckedIn(state.dailyLog[key]);
+        if (status > 0) {
+          streak++;
+        } else if (i === 0) {
+        } else {
+          break;
+        }
+        d.setDate(d.getDate() - 1);
+      }
+
+      const latestVocab = state.vocabRecords.length
+        ? state.vocabRecords[state.vocabRecords.length - 1].score
+        : 1500;
+
+      return { todayCount, totalDays, streak, latestVocab, mvp: todayLog.mvp };
+    }
+
+    function renderStreakBar() {
+      const bar = document.getElementById('streakBar');
+      bar.innerHTML = '';
+      const todayStr = getTodayStr();
+      const days = [];
+      for (let i = 13; i >= 0; i--) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        const label = `${d.getMonth() + 1}/${d.getDate()}`;
+        days.push({ key, label, isToday: key === todayStr });
+      }
+      days.forEach(item => {
+        const st = isDayCheckedIn(state.dailyLog[item.key]);
+        const div = document.createElement('div');
+        div.className = 'day-dot' + (st === 2 ? ' full' : st === 1 ? ' partial' : '') + (item.isToday ? ' today' : '');
+        div.title = `${item.key}: ${st === 2 ? '完整打卡' : st === 1 ? '保底/部分打卡' : '未打卡'}`;
+        div.innerHTML = `<span>${item.label}</span><span>${st === 2 ? '✓' : st === 1 ? '⚡' : '·'}</span>`;
+        bar.appendChild(div);
+      });
+    }
+
+    function addVocabRecord() {
+      const date = document.getElementById('vocabDateInput').value || getTodayStr();
+      const score = parseInt(document.getElementById('vocabScoreInput').value, 10);
+      const note = document.getElementById('vocabNoteInput').value.trim() || '阶段测验';
+      if (!score || score < 100) {
+        alert('请输入有效的词汇量数字（例如 3500）');
+        return;
+      }
+      state.vocabRecords.push({ date, score, note });
+      state.vocabRecords.sort((a, b) => a.date.localeCompare(b.date));
+      document.getElementById('vocabScoreInput').value = '';
+      document.getElementById('vocabNoteInput').value = '';
+      saveState();
+    }
+
+    function deleteVocabRecord(idx) {
+      state.vocabRecords.splice(idx, 1);
+      saveState();
+    }
+
+    function renderVocabChart() {
+      const box = document.getElementById('vocabChartBox');
+      const wrap = document.getElementById('vocabTableWrap');
+      const recs = state.vocabRecords;
+
+      if (!recs.length) {
+        box.innerHTML = '<p style="color:var(--text-muted);font-size:0.86rem;">暂无词汇量记录，测完后在上方添加第一条吧！</p>';
+        wrap.innerHTML = '';
+        return;
+      }
+
+      const w = 680, h = 210, padL = 52, padR = 30, padT = 24, padB = 34;
+      const maxVal = Math.max(8500, ...recs.map(r => r.score + 500));
+      const minVal = 0;
+
+      const xPos = i => recs.length === 1
+        ? padL + (w - padL - padR) / 2
+        : padL + (i / (recs.length - 1)) * (w - padL - padR);
+      const yPos = v => padT + (1 - (v - minVal) / (maxVal - minVal)) * (h - padT - padB);
+
+      let gridLines = '';
+      [0, 2000, 4000, 6000, 8000].forEach(val => {
+        if (val <= maxVal) {
+          const y = yPos(val);
+          gridLines += `<line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="currentColor" stroke-opacity="0.12" stroke-dasharray="4 4"/>`;
+          gridLines += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="11" fill="currentColor" opacity="0.6">${val}</text>`;
+        }
+      });
+
+      const targetY = yPos(7000);
+      const targetLine = `<line x1="${padL}" y1="${targetY}" x2="${w - padR}" y2="${targetY}" stroke="#0f9d6e" stroke-opacity="0.55" stroke-dasharray="6 4"/>
+        <text x="${w - padR}" y="${targetY - 6}" text-anchor="end" font-size="11" fill="#0f9d6e" font-weight="700">雅思高分参考线 (7,000)</text>`;
+
+      const pts = recs.map((r, i) => `${xPos(i)},${yPos(r.score)}`).join(' ');
+      const polyline = recs.length > 1
+        ? `<polyline fill="none" stroke="#3b5bdb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="${pts}" />`
+        : '';
+
+      const dots = recs.map((r, i) => {
+        const x = xPos(i), y = yPos(r.score);
+        return `
+          <circle cx="${x}" cy="${y}" r="5.5" fill="#3b5bdb" stroke="#fff" stroke-width="2" />
+          <text x="${x}" y="${y - 10}" text-anchor="middle" font-size="11.5" font-weight="700" fill="currentColor">${r.score}</text>
+          <text x="${x}" y="${h - 10}" text-anchor="middle" font-size="10.5" fill="currentColor" opacity="0.65">${r.date.slice(5)}</text>
+        `;
+      }).join('');
+
+      box.innerHTML = `<svg viewBox="0 0 ${w} ${h}" style="width:100%; height:auto; display:block;">${gridLines}${targetLine}${polyline}${dots}</svg>`;
+
+      let rows = recs.map((r, i) => `
+        <tr>
+          <td>${r.date}</td>
+          <td><strong>${r.score.toLocaleString()}</strong></td>
+          <td>${escapeHtml(r.note)}</td>
+          <td style="text-align:right;"><button class="btn btn-danger" style="padding:4px 9px;font-size:0.78rem;" onclick="deleteVocabRecord(${i})">删除</button></td>
+        </tr>
+      `).join('');
+
+      wrap.innerHTML = `<div style="overflow-x:auto;"><table><thead><tr><th>日期</th><th>词汇量</th><th>备注</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+
+    function addNote() {
+      const input = document.getElementById('noteInput');
+      const text = input.value.trim();
+      if (!text) return;
+      state.notes.unshift({ id: Date.now(), text, date: getTodayStr() });
+      input.value = '';
+      saveState();
+    }
+
+    function deleteNote(id) {
+      state.notes = state.notes.filter(n => n.id !== id);
+      saveState();
+    }
+
+    function renderNotes() {
+      const container = document.getElementById('notesList');
+      if (!state.notes.length) {
+        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.86rem;">还没有保存记录。平时遇到的好表达或长难句随手贴进来吧！</p>';
+        return;
+      }
+      container.innerHTML = state.notes.map(n => `
+        <div class="note-item">
+          <div>
+            <div style="white-space:pre-wrap;font-size:0.9rem;">${escapeHtml(n.text)}</div>
+            <div class="note-meta">记录于 ${n.date}</div>
+          </div>
+          <button class="btn btn-danger" style="padding:5px 10px;font-size:0.78rem;flex-shrink:0;" onclick="deleteNote(${n.id})">删除</button>
+        </div>
+      `).join('');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function exportData() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `英语学习进度备份_${getTodayStr()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const data = JSON.parse(e.target.result);
+          state = Object.assign(defaultState(), data);
+          saveState();
+          alert('进度备份导入成功！');
+        } catch (err) {
+          alert('导入失败：文件格式不正确。');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetAll() {
+      if (confirm('确定要清空所有打卡进度、词汇记录和备忘录吗？建议先导出备份。')) {
+        state = defaultState();
+        saveState();
+      }
+    }
+
+    function renderAll() {
+      applyTheme();
+      checkIosBanner();
+      const today = getTodayStr();
+      document.getElementById('todayDateLabel').textContent = `今天：${today}`;
+      if (!document.getElementById('vocabDateInput').value) {
+        document.getElementById('vocabDateInput').value = today;
+      }
+
+      const log = getTodayLog();
+      document.querySelectorAll('[data-daily]').forEach(el => {
+        const key = el.getAttribute('data-daily');
+        const cb = el.querySelector('input');
+        cb.checked = !!log[key];
+        el.classList.toggle('done', !!log[key]);
+      });
+
+      const mvpBtn = document.getElementById('mvpBtn');
+      mvpBtn.textContent = log.mvp ? '✅ 今日已保底不断链' : '⚡ 今日保底打卡';
+      mvpBtn.className = log.mvp ? 'btn btn-primary' : 'btn btn-amber';
+
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        const cb = el.querySelector('input');
+        cb.checked = !!state.checks[key];
+        el.classList.toggle('done', !!state.checks[key]);
+      });
+
+      const setupDone = ['setup_1', 'setup_2', 'setup_3', 'setup_4', 'setup_5', 'setup_6'].filter(k => state.checks[k]).length;
+      document.getElementById('setupProgressPill').textContent = `${setupDone}/6`;
+
+      const w1Done = ['w1_d1', 'w1_d2', 'w1_d3', 'w1_d4', 'w1_d5', 'w1_d6', 'w1_d7'].filter(k => state.checks[k]).length;
+      document.getElementById('week1ProgressPill').textContent = `${w1Done}/7`;
+
+      const milestoneKeys = [
+        'm_p1_1', 'm_p1_2', 'm_p1_3',
+        'm_p2_1', 'm_p2_2', 'm_p2_3',
+        'm_p3_1', 'm_p3_2', 'm_p3_3',
+        'm_p4_1', 'm_p4_2', 'm_p4_3'
+      ];
+      const mDone = milestoneKeys.filter(k => state.checks[k]).length;
+      document.getElementById('milestoneCount').textContent = `${mDone} / 12 项已达成`;
+      document.getElementById('milestoneProgressFill').style.width = `${Math.round((mDone / 12) * 100)}%`;
+
+      const stats = computeStats();
+      document.getElementById('statToday').textContent = `${stats.todayCount} / 4${stats.mvp ? ' ⚡' : ''}`;
+      document.getElementById('statTotalDays').textContent = `${stats.totalDays} 天`;
+      document.getElementById('statStreak').textContent = `${stats.streak} 天`;
+      document.getElementById('statVocab').textContent = stats.latestVocab.toLocaleString();
+      document.getElementById('streakHint').textContent = stats.streak > 0 ? `🔥 已连续坚持 ${stats.streak} 天` : '明天从 6 分钟开始第一天！';
+
+      renderStreakBar();
+      renderVocabChart();
+      renderNotes();
+    }
+
+    renderAll();
+  </script>
+</body>
+</html>
