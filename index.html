@@ -936,8 +936,8 @@
       color: var(--primary);
       font-weight: 800;
       background: var(--primary-soft);
+      box-shadow: 0 0 0 2px var(--primary-soft);
       border-bottom: 2.5px solid var(--primary);
-      padding: 0 3px;
     }
 
     /* Animated Equalizer Bars */
@@ -1341,9 +1341,11 @@
       border-radius: 4px;
       transition: color 0.12s ease, background 0.12s ease;
     }
-    .k-word:hover, .w-tap:hover {
-      background: var(--primary-soft);
-      color: var(--primary);
+    @media (hover: hover) {
+      .k-word:hover, .w-tap:hover {
+        text-decoration: underline dotted var(--primary);
+        text-underline-offset: 3px;
+      }
     }
     .k-word.in-wordbook, .w-tap.in-wordbook {
       border-bottom: 1.5px dashed var(--emerald);
@@ -2668,7 +2670,7 @@
         dailyLog: {},
         bbcProgress: {},
         bbcSync: {},
-        bbcSyncVersion: 2,
+        bbcSyncVersion: 3,
         bbcLastId: null,
         wordbook: [],
         vocabRecords: [
@@ -2694,9 +2696,9 @@
         const merged = Object.assign(defaultState(), parsed);
         if (!merged.bbcProgress || typeof merged.bbcProgress !== 'object') merged.bbcProgress = {};
         if (!Array.isArray(merged.wordbook)) merged.wordbook = [];
-        if (!merged.bbcSync || typeof merged.bbcSync !== 'object' || merged.bbcSyncVersion !== 2) {
+        if (!merged.bbcSync || typeof merged.bbcSync !== 'object' || merged.bbcSyncVersion !== 3) {
           merged.bbcSync = {};
-          merged.bbcSyncVersion = 2;
+          merged.bbcSyncVersion = 3;
         }
         return merged;
       } catch (e) {
@@ -3575,8 +3577,8 @@
       const progEl = document.getElementById(`turn-prog-${foundTurn}`);
       if (progEl) progEl.style.width = `${pct.toFixed(1)}%`;
 
-      // Find exact active word inside this turn (with tiny 50ms visual lead so eyes catch each word right on onset)
-      const leadT = t + 0.05;
+      // Find exact active word inside this turn (tiny 30ms visual lead on pure-DTW acoustic onset)
+      const leadT = t + 0.03;
       let foundWord = 0;
       for (let w = 0; w < tl.words.length; w++) {
         if (leadT >= tl.words[w].start) {
@@ -4175,6 +4177,12 @@
           if (ep) {
             buildEpisodeTimeline(ep, audio.duration);
             updateTranscriptTimestampLabels();
+            activeWordIdx = -1;
+            updateKaraokeFrame(false);
+            const lastTl = currentTimeline[currentTimeline.length - 1];
+            if (audioTriedFallback && lastTl && isFinite(audio.duration) && audio.duration > lastTl.end + 8) {
+              document.getElementById('audioStatusHint').textContent = '备用源含片头广告：听到第1句时点「🎯 播到这」即可一键精准对齐';
+            }
           }
         }
       });
@@ -4190,12 +4198,17 @@
         stopKaraokeLoop();
       });
       audio.addEventListener('seeked', () => {
+        activeWordIdx = -1;
         updateKaraokeFrame(true);
       });
       audio.addEventListener('timeupdate', () => {
         document.getElementById('audioCurTime').textContent = formatSec(audio.currentTime);
         if (isFinite(audio.duration) && audio.duration > 0) {
           document.getElementById('audioSeek').value = (audio.currentTime / audio.duration) * 100;
+        }
+        if (!audio.paused) {
+          updateKaraokeFrame(true);
+          if (!karaokeRafId) startKaraokeLoop();
         }
       });
       audio.addEventListener('ended', () => {
@@ -5339,9 +5352,9 @@
           state = Object.assign(defaultState(), data);
           if (!state.bbcProgress || typeof state.bbcProgress !== 'object') state.bbcProgress = {};
           if (!Array.isArray(state.wordbook)) state.wordbook = [];
-          if (!state.bbcSync || typeof state.bbcSync !== 'object' || state.bbcSyncVersion !== 2) {
+          if (!state.bbcSync || typeof state.bbcSync !== 'object' || state.bbcSyncVersion !== 3) {
             state.bbcSync = {};
-            state.bbcSyncVersion = 2;
+            state.bbcSyncVersion = 3;
           }
           saveState();
           alert('进度备份导入成功！');
