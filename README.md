@@ -1,6 +1,6 @@
 # 英语 6 个月回血与雅思通关计划
 
-专为「曾有 8000+ 词汇底子 · 白天上班 · iPhone + 单程开车 10 分钟」定制的交互式英语学习与打卡面板。
+交互式英语学习与打卡面板，内置 BBC 6 Minute English 精读库、逐词同步音频与长难句拆解。
 
 - 📱 **在线打开（推荐用 iPhone Safari 添加到主屏幕）**：https://idealauror.github.io/english-plan/
 - 🎧 **内置 BBC 6 Minute English 精读库（最新 30 期）**：
