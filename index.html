@@ -1654,7 +1654,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:10px;">
-            💡 <strong>卡拉OK同步提示：</strong>点任意段落左上角时间 <span class="pill pill-blue" style="padding:1px 6px;">▶ 00:15</span> 可直接跳播；播放时若稍有偏差，点当前正听到的句子右上角 <strong>「🎯 播到这」</strong> 即可一键精准校准并永久记住！
+            💡 <strong>逐词精确同步：</strong>全部 30 期均已通过 BBC 原声 MP3 语音波形强制对齐！点段落左上角 <span class="pill pill-blue" style="padding:1px 6px;">▶ 00:15</span> 可直接跳播；如需微调也可点 <strong>「🎯 播到这」</strong> 或播放器上的 ±0.5s。
           </div>
           <div class="turn-list" id="rTranscriptList"></div>
         </div>
@@ -2175,6 +2175,7 @@
         dailyLog: {},
         bbcProgress: {},
         bbcSync: {},
+        bbcSyncVersion: 2,
         bbcLastId: null,
         vocabRecords: [
           { date: getTodayStr(), score: 1500, note: '初始估测基线（准备用 TestYourVocab 复测）' }
@@ -2198,7 +2199,10 @@
         const parsed = JSON.parse(raw);
         const merged = Object.assign(defaultState(), parsed);
         if (!merged.bbcProgress || typeof merged.bbcProgress !== 'object') merged.bbcProgress = {};
-        if (!merged.bbcSync || typeof merged.bbcSync !== 'object') merged.bbcSync = {};
+        if (!merged.bbcSync || typeof merged.bbcSync !== 'object' || merged.bbcSyncVersion !== 2) {
+          merged.bbcSync = {};
+          merged.bbcSyncVersion = 2;
+        }
         return merged;
       } catch (e) {
         return defaultState();
@@ -2653,6 +2657,59 @@
         return;
       }
       const dur = (isFinite(totalDuration) && totalDuration > 30) ? totalDuration : 375;
+      const hasExact = turns.every(t => typeof t.s === 'number' && typeof t.e === 'number' && Array.isArray(t.wt));
+      const sync = state.bbcSync[ep.id] || { offset: 0, anchors: [] };
+      const offset = Number(sync.offset) || 0;
+      const anchors = Array.isArray(sync.anchors)
+        ? [...sync.anchors].filter(a => a.turnIdx >= 0 && a.turnIdx < turns.length).sort((a, b) => a.turnIdx - b.turnIdx)
+        : [];
+
+      if (hasExact) {
+        const baseStarts = turns.map(t => t.s);
+        const baseEnds = turns.map(t => t.e);
+
+        function mapExact(tBase) {
+          if (!anchors.length) return Math.max(0, tBase + offset);
+          const pts = [{ b: 0, c: Math.max(0, 0 + (anchors[0].time - baseStarts[anchors[0].turnIdx])) }];
+          for (const a of anchors) {
+            const prevC = pts[pts.length - 1].c;
+            pts.push({ b: baseStarts[a.turnIdx], c: Math.max(prevC + 0.5, a.time) });
+          }
+          const lastA = anchors[anchors.length - 1];
+          const lastPtC = pts[pts.length - 1].c;
+          const maxB = Math.max(dur, baseEnds[baseEnds.length - 1] + 5);
+          pts.push({ b: maxB, c: Math.max(lastPtC + 1, maxB + (lastA.time - baseStarts[lastA.turnIdx])) });
+
+          for (let k = 0; k < pts.length - 1; k++) {
+            const p0 = pts[k], p1 = pts[k + 1];
+            if (tBase <= p1.b || k === pts.length - 2) {
+              const span = Math.max(0.001, p1.b - p0.b);
+              const ratio = (tBase - p0.b) / span;
+              return Math.max(0, p0.c + ratio * (p1.c - p0.c) + offset);
+            }
+          }
+          return Math.max(0, tBase + offset);
+        }
+
+        currentTimeline = turns.map((turn, i) => {
+          const tokens = (turn.en || '').trim().split(/\s+/).filter(Boolean);
+          const start = mapExact(turn.s);
+          const end = Math.max(start + 0.2, mapExact(turn.e));
+          const wt = turn.wt || [];
+          const words = tokens.map((tok, wi) => {
+            const rawStart = turn.s + ((typeof wt[wi] === 'number' ? wt[wi] : 0) / 100);
+            const wStart = mapExact(rawStart);
+            const nextRawStart = (wi + 1 < tokens.length && typeof wt[wi + 1] === 'number')
+              ? turn.s + (wt[wi + 1] / 100)
+              : turn.e;
+            const wEnd = Math.max(wStart + 0.04, mapExact(nextRawStart));
+            return { text: tok, start: wStart, end: wEnd };
+          });
+          return { idx: i, start, end, words, exact: true };
+        });
+        return;
+      }
+
       const firstLine = (turns[0].en || '');
       const hasClassicIntro = /6 Minute English/i.test(firstLine);
       const introPad = hasClassicIntro ? 3.5 : 6.0;
@@ -2676,13 +2733,6 @@
       // Base estimated start time for every turn
       const baseStarts = rawTurns.map(rt => introPad + (rt.turnStartW / totalWeight) * usable);
       const baseEnds = rawTurns.map(rt => introPad + (rt.turnEndW / totalWeight) * usable);
-
-      // Apply user calibration anchors (piecewise linear interpolation) + global offset
-      const sync = state.bbcSync[ep.id] || { offset: 0, anchors: [] };
-      const offset = Number(sync.offset) || 0;
-      const anchors = Array.isArray(sync.anchors)
-        ? [...sync.anchors].filter(a => a.turnIdx >= 0 && a.turnIdx < turns.length).sort((a, b) => a.turnIdx - b.turnIdx)
-        : [];
 
       function mapTime(tBase) {
         if (!anchors.length) return Math.max(0, tBase + offset);
@@ -2989,8 +3039,11 @@
         }
       }
       if (foundTurn === -1 && t < currentTimeline[0].start && !audio.paused) {
-        // During opening jingle
-        document.getElementById('flbEn').textContent = '🎵 BBC 6 Minute English 开场音乐中...';
+        // During opening jingle / intro
+        const firstStart = currentTimeline[0].start;
+        document.getElementById('flbEn').textContent = firstStart > 10
+          ? `🎵 片头/播客导语中（正文将于 ${formatSec(firstStart)} 开始）`
+          : '🎵 BBC 6 Minute English 开场音乐中...';
         document.getElementById('flbZh').textContent = ep.titleZh || '';
         return;
       }
@@ -3024,11 +3077,13 @@
       const progEl = document.getElementById(`turn-prog-${foundTurn}`);
       if (progEl) progEl.style.width = `${pct.toFixed(1)}%`;
 
-      // Find exact active word inside this turn
-      let foundWord = tl.words.length - 1;
+      // Find exact active word inside this turn (with tiny 50ms visual lead so eyes catch each word right on onset)
+      const leadT = t + 0.05;
+      let foundWord = 0;
       for (let w = 0; w < tl.words.length; w++) {
-        if (t < tl.words[w].end) {
+        if (leadT >= tl.words[w].start) {
           foundWord = w;
+        } else {
           break;
         }
       }
@@ -3468,7 +3523,10 @@
           const data = JSON.parse(e.target.result);
           state = Object.assign(defaultState(), data);
           if (!state.bbcProgress || typeof state.bbcProgress !== 'object') state.bbcProgress = {};
-          if (!state.bbcSync || typeof state.bbcSync !== 'object') state.bbcSync = {};
+          if (!state.bbcSync || typeof state.bbcSync !== 'object' || state.bbcSyncVersion !== 2) {
+            state.bbcSync = {};
+            state.bbcSyncVersion = 2;
+          }
           saveState();
           alert('进度备份导入成功！');
         } catch (err) {
