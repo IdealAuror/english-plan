@@ -227,7 +227,7 @@
       box-shadow: 0 3px 10px rgba(59, 91, 219, 0.25);
     }
 
-    /* Mobile Bottom Native-Style Tab Bar (5 tabs) */
+    /* Mobile Bottom Native-Style Tab Bar (6 tabs) */
     .mobile-tabbar {
       display: none;
       position: fixed;
@@ -239,8 +239,8 @@
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-top: 1px solid var(--border);
-      padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
-      grid-template-columns: repeat(5, 1fr);
+      padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+      grid-template-columns: repeat(6, 1fr);
       gap: 2px;
     }
     .mobile-tab-btn {
@@ -1184,6 +1184,157 @@
       font-style: italic;
     }
 
+    .vocab-ipa {
+      font-family: "Lucida Sans Unicode", "Segoe UI", Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1px 7px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* ============ PHONETICS & SOUND-SHIFT MODULE ============ */
+    .ipa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .ipa-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.16s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ipa-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .ipa-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .ipa-sym {
+      font-family: "Lucida Sans Unicode", "Segoe UI", Arial, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .ipa-ex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .ipa-ex-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.14s;
+    }
+    .ipa-ex-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .ed-word-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .ed-word-chip {
+      text-align: left;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text);
+      border-radius: 11px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .ed-word-chip:hover { border-color: var(--primary); }
+    .verb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .verb-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 13px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .verb-card.has-trap { border-left: 4px solid var(--rose); }
+    .verb-forms {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+    }
+    .verb-form-col { cursor: pointer; padding: 3px; border-radius: 6px; }
+    .verb-form-col:hover { background: var(--primary-soft); }
+    .verb-form-w { font-weight: 800; font-size: 0.94rem; color: var(--text); display: block; }
+    .verb-form-col.past .verb-form-w { color: var(--primary); }
+    .verb-form-ipa { font-size: 0.75rem; color: var(--text-muted); font-family: "Lucida Sans Unicode", "Segoe UI", Arial, sans-serif; display: block; }
+    .verb-trap {
+      font-size: 0.78rem;
+      color: var(--rose);
+      background: var(--rose-soft);
+      padding: 5px 9px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .ear-quiz-stage {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+    }
+    .ear-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .ear-choice-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .ear-choice-btn {
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 13px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: all 0.15s;
+    }
+    .ear-choice-btn:hover { border-color: var(--primary); }
+    .ear-choice-btn.correct { background: var(--emerald-soft); border-color: var(--emerald); color: var(--emerald); }
+    .ear-choice-btn.wrong { background: var(--rose-soft); border-color: var(--rose); color: var(--rose); }
+
     /* Toast */
     .toast {
       position: fixed;
@@ -1221,7 +1372,8 @@
       .nav-wrap { display: none; }
       .mobile-tabbar { display: grid; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .grid-2, .phase-grid, .ep-grid, .vocab-grid, .quiz-options { grid-template-columns: 1fr; }
+      .grid-2, .phase-grid, .ep-grid, .vocab-grid, .quiz-options, .ipa-grid, .ed-word-grid, .verb-grid { grid-template-columns: 1fr; }
+      .ear-choice-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
       .streak-bar { grid-template-columns: repeat(7, 1fr); }
       .hero { padding: 18px 16px; border-radius: 18px; }
       .hero h1 { font-size: 1.32rem; }
@@ -1293,6 +1445,7 @@
       <div class="nav-tabs">
         <button class="tab-btn active" data-tab="daily" onclick="switchTab('daily')">📅 今日打卡</button>
         <button class="tab-btn" data-tab="bbc6min" onclick="switchTab('bbc6min')">🎧 6Min 精读 (30期)</button>
+        <button class="tab-btn" data-tab="phonetics" onclick="switchTab('phonetics')">🔤 音标 & 变音</button>
         <button class="tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">🗺️ 6个月路线图</button>
         <button class="tab-btn" data-tab="grammar" onclick="switchTab('grammar')">🧩 长难句急救</button>
         <button class="tab-btn" data-tab="tools" onclick="switchTab('tools')">📈 iPhone & 曲线</button>
@@ -1685,6 +1838,80 @@
             <span class="pill pill-green">开车和 AI 聊天直接用</span>
           </div>
           <div class="vocab-grid" id="rPhrasesGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2.5: PHONETICS, -ED RULES & IRREGULAR VERB SOUND SHIFTS -->
+    <section id="tab-phonetics" class="tab-panel">
+      <div class="card" style="border-left: 4px solid var(--purple);">
+        <div class="card-header">
+          <div class="card-title">🔤 英式 IPA 音标 & 过去式变音听辨特训</div>
+          <div class="seg-group">
+            <button class="seg-btn" id="phRateSlowBtn" onclick="setPhoneticsRate(0.75)">🐢 0.75x 慢速清晰</button>
+            <button class="seg-btn active" id="phRateNormBtn" onclick="setPhoneticsRate(0.95)">🔊 0.95x 标准英音</button>
+          </div>
+        </div>
+        <p style="font-size:0.86rem; color:var(--text-muted);">
+          专治“眼睛认得词、耳朵听不出过去式和弱读”：点任意音标、例词或动词即可英式点读；先搞定 <strong>-ed 三大读音规律</strong> 与 <strong>60 组变音不规则过去式</strong>，再去盲听测验验收耳朵！
+        </p>
+      </div>
+
+      <div class="reader-subtabs">
+        <button class="subtab-btn active" data-phsub="ipa" onclick="switchPhoneticsSub('ipa')">🔤 44个英式音标</button>
+        <button class="subtab-btn" data-phsub="ed" onclick="switchPhoneticsSub('ed')">⚡ -ed 变音规律</button>
+        <button class="subtab-btn" data-phsub="verbs" onclick="switchPhoneticsSub('verbs')">🔀 60组不规则过去式</button>
+        <button class="subtab-btn" data-phsub="quiz" onclick="switchPhoneticsSub('quiz')">🎧 盲听辨音测验</button>
+      </div>
+
+      <!-- PHONETICS SUB A: 44 IPA CHART -->
+      <div id="phSecIpa"></div>
+
+      <!-- PHONETICS SUB B: -ED SOUND RULES -->
+      <div id="phSecEd" style="display:none;">
+        <div id="phEdList"></div>
+        <div class="card" style="border-left:4px solid var(--amber);">
+          <div class="card-header">
+            <div class="card-title">🎧 BBC 真实听力进阶提示：为什么有时听不到 -ed？</div>
+            <span class="pill pill-amber">连读 + 失去爆破</span>
+          </div>
+          <div style="font-size:0.86rem; color:var(--text); line-height:1.75;">
+            <p>1. <strong>连读变身（-ed + 元音）</strong>：<code>worked in</code> 听起来像 <code>work-tin</code>；<code>lived in</code> 听起来像 <code>liv-din</code>。</p>
+            <p style="margin-top:6px;">2. <strong>失去爆破（-ed + 辅音）</strong>：<code>exposed to</code>、<code>looked like</code> 里的 <code>/d/</code> 和 <code>/t/</code> 往往只做口型不爆破，听起来极短，要靠前面的时间状语（yesterday / in the 1950s / have been）和语境同步捕捉。</p>
+            <p style="margin-top:6px;">3. <strong>顺带记住 -s / -es 复数与三单（完全同套逻辑！）</strong>：清辅音后读 <code>/s/</code>（works）、浊辅音/元音后读 <code>/z/</code>（plays / bags）、嘶嘶音 <code>/s, z, ʃ, ʒ, tʃ, dʒ/</code> 后多一音节读 <code>/ɪz/</code>（watches / changes）。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHONETICS SUB C: 60 IRREGULAR VERBS -->
+      <div id="phSecVerbs" style="display:none;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🔀 60 组高频不规则动词（按变音家族记忆）</div>
+            <span class="pill pill-rose">红边卡片 = 听力头号易混坑</span>
+          </div>
+          <div class="bbc-toolbar">
+            <input type="search" id="verbSearchInput" class="bbc-search" placeholder="🔍 搜索动词原形、过去式或中文（如 said / bought / 听见）..." oninput="renderPhoneticsVerbs()" />
+          </div>
+          <div class="chip-bar" id="verbGroupChips"></div>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px;" id="verbFilterHint"></div>
+          <div class="verb-grid" id="phVerbsGrid"></div>
+        </div>
+      </div>
+
+      <!-- PHONETICS SUB D: EAR TRAINING QUIZ -->
+      <div id="phSecQuiz" style="display:none;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🎧 盲听辨音特训（用耳朵验收音标与变音）</div>
+            <span class="pill pill-green" id="earQuizScorePill">得分 0 / 0 · 连对 0</span>
+          </div>
+          <div class="chip-bar" id="earQuizModeChips">
+            <button class="chip active" data-qmode="pairs" onclick="setEarQuizMode('pairs')">🔀 易混词对决 (24组)</button>
+            <button class="chip" data-qmode="ed" onclick="setEarQuizMode('ed')">⚡ -ed 尾音听辨 (30词)</button>
+            <button class="chip" data-qmode="verbs" onclick="setEarQuizMode('verbs')">🎯 不规则过去式盲听 (60词)</button>
+          </div>
+          <div class="ear-quiz-stage" id="earQuizStage"></div>
         </div>
       </div>
     </section>
@@ -2127,8 +2354,11 @@
     <button class="mobile-tab-btn" data-tab="bbc6min" onclick="switchTab('bbc6min')">
       <span class="icon">🎧</span><span>6Min</span>
     </button>
+    <button class="mobile-tab-btn" data-tab="phonetics" onclick="switchTab('phonetics')">
+      <span class="icon">🔤</span><span>音标</span>
+    </button>
     <button class="mobile-tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">
-      <span class="icon">🗺️</span><span>路线图</span>
+      <span class="icon">🗺️</span><span>路线</span>
     </button>
     <button class="mobile-tab-btn" data-tab="grammar" onclick="switchTab('grammar')">
       <span class="icon">🧩</span><span>长难句</span>
@@ -2138,8 +2368,9 @@
     </button>
   </nav>
 
-  <!-- Load BBC 6 Minute English 30-Episode Dataset (works both online & offline file://) -->
+  <!-- Load BBC 6 Minute English 30-Episode Dataset & Phonetics Dataset (works both online & offline file://) -->
   <script src="data/bbc6min.js"></script>
+  <script src="data/phonetics.js"></script>
 
   <script>
     const STORAGE_KEY = 'english_6m_ielts_plan_v1';
@@ -3187,7 +3418,10 @@
         <div class="vocab-card">
           <div>
             <div class="vocab-word-row">
-              <span class="vocab-word">${escapeHtml(v.word || '')}</span>
+              <div style="display:flex; align-items:baseline; gap:6px; flex-wrap:wrap;">
+                <span class="vocab-word">${escapeHtml(v.word || '')}</span>
+                ${v.ipa ? `<span class="vocab-ipa">${escapeHtml(v.ipa)}</span>` : ''}
+              </div>
               ${v.pos ? `<span class="vocab-pos">${escapeHtml(v.pos)}</span>` : ''}
             </div>
             <div class="vocab-zh" style="margin-top:4px;">${escapeHtml(v.zh || '')}</div>
@@ -3251,7 +3485,7 @@
       if (text) speakEnglish(text);
     }
 
-    function speakEnglish(text) {
+    function speakEnglish(text, rateOverride) {
       if (!('speechSynthesis' in window)) {
         showToast('当前浏览器不支持语音朗读');
         return;
@@ -3260,12 +3494,339 @@
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(text);
         u.lang = 'en-GB';
-        u.rate = 0.95;
+        u.rate = typeof rateOverride === 'number' ? rateOverride : 0.95;
         const voices = window.speechSynthesis.getVoices();
         const gb = voices.find(v => /en[-_]GB/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
         if (gb) u.voice = gb;
         window.speechSynthesis.speak(u);
       } catch (e) {}
+    }
+
+    let speakSeqTimers = [];
+    function speakSequence(words, rateOverride) {
+      if (!('speechSynthesis' in window)) {
+        showToast('当前浏览器不支持语音朗读');
+        return;
+      }
+      speakSeqTimers.forEach(clearTimeout);
+      speakSeqTimers = [];
+      try { window.speechSynthesis.cancel(); } catch (e) {}
+      const rate = typeof rateOverride === 'number' ? rateOverride : phoneticsRate;
+      const voices = window.speechSynthesis.getVoices();
+      const gb = voices.find(v => /en[-_]GB/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+
+      let idx = 0;
+      function next() {
+        if (idx >= words.length) return;
+        const u = new SpeechSynthesisUtterance(words[idx++]);
+        u.lang = 'en-GB';
+        u.rate = rate;
+        if (gb) u.voice = gb;
+        u.onend = () => {
+          const t = setTimeout(next, 280);
+          speakSeqTimers.push(t);
+        };
+        try { window.speechSynthesis.speak(u); } catch (e) {}
+      }
+      next();
+    }
+
+    // ============ PHONETICS & SOUND-SHIFT MODULE ============
+    const PHONETICS = window.PHONETICS_DATA || { ipaGroups: [], edRules: [], irregularVerbs: [], minimalPairs: [] };
+    let currentPhoneticsSub = 'ipa';
+    let phoneticsRate = 0.95;
+    let verbFilterGroup = '全部';
+    let earQuizMode = 'pairs';
+    let earQuizState = { total: 0, right: 0, streak: 0, current: null, answered: false };
+
+    function setPhoneticsRate(r) {
+      phoneticsRate = r;
+      document.getElementById('phRateSlowBtn').classList.toggle('active', r < 0.85);
+      document.getElementById('phRateNormBtn').classList.toggle('active', r >= 0.85);
+      showToast(r < 0.85 ? '🐢 已切换 0.75x 慢速英音' : '🔊 已切换 0.95x 标准英音');
+    }
+
+    function switchPhoneticsSub(sub) {
+      currentPhoneticsSub = sub;
+      document.querySelectorAll('[data-phsub]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-phsub') === sub);
+      });
+      document.getElementById('phSecIpa').style.display = sub === 'ipa' ? 'block' : 'none';
+      document.getElementById('phSecEd').style.display = sub === 'ed' ? 'block' : 'none';
+      document.getElementById('phSecVerbs').style.display = sub === 'verbs' ? 'block' : 'none';
+      document.getElementById('phSecQuiz').style.display = sub === 'quiz' ? 'block' : 'none';
+      if (sub === 'quiz' && !earQuizState.current) nextEarQuizQuestion(false);
+    }
+
+    function renderPhoneticsIpa() {
+      const wrap = document.getElementById('phSecIpa');
+      if (!wrap) return;
+      wrap.innerHTML = (PHONETICS.ipaGroups || []).map(grp => `
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">${escapeHtml(grp.title)}</div>
+            <span class="pill pill-purple">${grp.items.length} 个音标</span>
+          </div>
+          <p style="font-size:0.84rem; color:var(--text-muted);">${escapeHtml(grp.desc)}</p>
+          <div class="ipa-grid">
+            ${grp.items.map(it => `
+              <div class="ipa-card" onclick="speakEnglish('${escapeHtml(it.tts).replace(/'/g, "\\'")}', phoneticsRate)">
+                <div class="ipa-top">
+                  <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
+                    <span class="ipa-sym">${escapeHtml(it.sym)}</span>
+                    <span class="pill pill-blue">${escapeHtml(it.kind)}</span>
+                    ${it.pair ? `<span class="pill pill-amber">对比 ${escapeHtml(it.pair)}</span>` : ''}
+                  </div>
+                  <span style="font-size:0.78rem; color:var(--primary); font-weight:700;">🔊 点听</span>
+                </div>
+                <div style="font-size:0.82rem; color:var(--text-muted);">${escapeHtml(it.label)}</div>
+                <div class="ipa-ex-row">
+                  ${(it.examples || []).map(ex => `
+                    <button type="button" class="ipa-ex-btn" onclick="event.stopPropagation(); speakEnglish('${escapeHtml(ex.w).replace(/'/g, "\\'")}', phoneticsRate)">
+                      <strong>${escapeHtml(ex.w)}</strong> <span style="color:var(--primary);">${escapeHtml(ex.ipa)}</span> <span style="color:var(--text-muted);">${escapeHtml(ex.zh)}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderPhoneticsEd() {
+      const wrap = document.getElementById('phEdList');
+      if (!wrap) return;
+      wrap.innerHTML = (PHONETICS.edRules || []).map(rule => `
+        <div class="card" style="border-left:4px solid var(--${rule.color === 'blue' ? 'primary' : rule.color === 'green' ? 'emerald' : 'amber'});">
+          <div class="card-header">
+            <div class="card-title">⚡ -ed 读作 <span class="ipa-sym" style="font-size:1.15rem;">${escapeHtml(rule.sound)}</span></div>
+            <span class="pill pill-${rule.color}">${escapeHtml(rule.badge)}</span>
+          </div>
+          <p style="font-size:0.87rem; color:var(--text);">${escapeHtml(rule.ruleZh)}</p>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">💡 ${escapeHtml(rule.trapZh)}</p>
+          <div class="ed-word-grid">
+            ${(rule.words || []).map(w => `
+              <button type="button" class="ed-word-chip" onclick="speakSequence(['${escapeHtml(w.base)}', '${escapeHtml(w.past)}'])">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
+                  <div>
+                    <span style="font-weight:700;">${escapeHtml(w.base)}</span>
+                    <span style="color:var(--text-muted); font-size:0.78rem;"> ${escapeHtml(w.baseIpa)}</span>
+                    <span style="color:var(--primary); font-weight:800;"> → ${escapeHtml(w.past)}</span>
+                    <span style="color:var(--primary); font-size:0.8rem;"> ${escapeHtml(w.pastIpa)}</span>
+                  </div>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(w.zh)} 🔊</span>
+                </div>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setVerbGroup(g) {
+      verbFilterGroup = g;
+      renderPhoneticsVerbs();
+    }
+
+    function renderPhoneticsVerbs() {
+      const verbs = PHONETICS.irregularVerbs || [];
+      const groups = ['全部', '仅看高频易混坑', ...Array.from(new Set(verbs.map(v => v.group)))];
+      const chipWrap = document.getElementById('verbGroupChips');
+      if (chipWrap) {
+        chipWrap.innerHTML = groups.map(g => `
+          <button class="chip ${verbFilterGroup === g ? 'active' : ''}" onclick="setVerbGroup('${escapeHtml(g)}')">${escapeHtml(g)}</button>
+        `).join('');
+      }
+      const q = (document.getElementById('verbSearchInput')?.value || '').trim().toLowerCase();
+      const list = verbs.filter(v => {
+        if (verbFilterGroup === '仅看高频易混坑' && !v.trapNote) return false;
+        if (verbFilterGroup !== '全部' && verbFilterGroup !== '仅看高频易混坑' && v.group !== verbFilterGroup) return false;
+        if (!q) return true;
+        return `${v.base} ${v.past} ${v.pp} ${v.zh} ${v.group} ${v.trapNote || ''}`.toLowerCase().includes(q);
+      });
+
+      const hint = document.getElementById('verbFilterHint');
+      if (hint) hint.textContent = `当前显示 ${list.length} / ${verbs.length} 组不规则动词（点击任意单个词或右上角「🔊 三态连读」可对比听变音）`;
+
+      const grid = document.getElementById('phVerbsGrid');
+      if (!grid) return;
+      grid.innerHTML = list.map((v, idx) => {
+        const realIdx = verbs.indexOf(v);
+        return `
+          <div class="verb-card ${v.trapNote ? 'has-trap' : ''}">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="font-weight:800; font-size:0.92rem;">${escapeHtml(v.zh)}</span>
+                <span class="pill pill-purple">${escapeHtml(v.group)}</span>
+              </div>
+              <div style="display:flex; gap:5px;">
+                <button class="micro-btn" onclick="speakSequence(['${escapeHtml(v.base)}','${escapeHtml(v.past)}','${escapeHtml(v.pp)}'])">🔊 三态连读</button>
+                <button class="micro-btn" onclick="saveVerbToNote(${realIdx})">⭐ 收藏</button>
+              </div>
+            </div>
+            <div class="verb-forms">
+              <div class="verb-form-col" onclick="speakEnglish('${escapeHtml(v.base)}', phoneticsRate)" title="点击听原形">
+                <span style="font-size:0.68rem; color:var(--text-muted);">原形</span>
+                <span class="verb-form-w">${escapeHtml(v.base)}</span>
+                <span class="verb-form-ipa">${escapeHtml(v.baseIpa)}</span>
+              </div>
+              <div class="verb-form-col past" onclick="speakEnglish('${escapeHtml(v.past)}', phoneticsRate)" title="点击听过去式">
+                <span style="font-size:0.68rem; color:var(--primary);">过去式</span>
+                <span class="verb-form-w">${escapeHtml(v.past)}</span>
+                <span class="verb-form-ipa">${escapeHtml(v.pastIpa)}</span>
+              </div>
+              <div class="verb-form-col" onclick="speakEnglish('${escapeHtml(v.pp)}', phoneticsRate)" title="点击听过去分词">
+                <span style="font-size:0.68rem; color:var(--text-muted);">过去分词</span>
+                <span class="verb-form-w">${escapeHtml(v.pp)}</span>
+                <span class="verb-form-ipa">${escapeHtml(v.ppIpa)}</span>
+              </div>
+            </div>
+            ${v.trapNote ? `<div class="verb-trap">⚠️ ${escapeHtml(v.trapNote)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function saveVerbToNote(idx) {
+      const v = (PHONETICS.irregularVerbs || [])[idx];
+      if (!v) return;
+      const text = `[不规则变音] ${v.base} ${v.baseIpa} → ${v.past} ${v.pastIpa} → ${v.pp} ${v.ppIpa}（${v.zh}）${v.trapNote ? '\n提醒: ' + v.trapNote : ''}`;
+      state.notes.unshift({ id: Date.now(), text, date: getTodayStr() });
+      saveState();
+      showToast('✅ 已存进「我的备忘录」');
+    }
+
+    function setEarQuizMode(mode) {
+      earQuizMode = mode;
+      document.querySelectorAll('#earQuizModeChips .chip').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-qmode') === mode);
+      });
+      nextEarQuizQuestion(true);
+    }
+
+    function nextEarQuizQuestion(autoPlay) {
+      let q = null;
+      if (earQuizMode === 'pairs') {
+        const pool = PHONETICS.minimalPairs || [];
+        const pair = pool[Math.floor(Math.random() * pool.length)];
+        const pickA = Math.random() < 0.5;
+        const target = pickA ? pair.a : pair.b;
+        q = {
+          mode: 'pairs',
+          promptZh: '听发音，选出你听到的单词：',
+          audioText: target.w,
+          answerIdx: pickA ? 0 : 1,
+          cols: 2,
+          options: [
+            { label: pair.a.w, sub: `${pair.a.zh}` },
+            { label: pair.b.w, sub: `${pair.b.zh}` }
+          ],
+          explainHtml: `<strong>${escapeHtml(pair.a.w)}</strong> ${escapeHtml(pair.a.ipa)}（${escapeHtml(pair.a.zh)}） vs <strong>${escapeHtml(pair.b.w)}</strong> ${escapeHtml(pair.b.ipa)}（${escapeHtml(pair.b.zh)}）<br/>辨音关键：${escapeHtml(pair.focus)}`
+        };
+      } else if (earQuizMode === 'ed') {
+        const allEd = [];
+        (PHONETICS.edRules || []).forEach(r => (r.words || []).forEach(w => allEd.push({ ...w, sound: r.sound, ruleId: r.id, ruleZh: r.ruleZh })));
+        const item = allEd[Math.floor(Math.random() * allEd.length)];
+        const ansIdx = item.ruleId === 't' ? 0 : item.ruleId === 'd' ? 1 : 2;
+        q = {
+          mode: 'ed',
+          promptZh: `听过去式「${item.past}」（${item.zh}），判断词尾 -ed 读哪个音？`,
+          audioText: item.past,
+          answerIdx: ansIdx,
+          cols: 3,
+          options: [
+            { label: '/t/', sub: '清辅音后' },
+            { label: '/d/', sub: '浊辅音/元音后' },
+            { label: '/ɪd/', sub: '/t/ 或 /d/ 后' }
+          ],
+          explainHtml: `<strong>${escapeHtml(item.base)}</strong> ${escapeHtml(item.baseIpa)} → <strong>${escapeHtml(item.past)}</strong> ${escapeHtml(item.pastIpa)}（词尾读 <strong>${escapeHtml(item.sound)}</strong>）<br/>${escapeHtml(item.ruleZh)}`
+        };
+      } else {
+        const pool = (PHONETICS.irregularVerbs || []).filter(v => v.past !== v.base);
+        const target = pool[Math.floor(Math.random() * pool.length)];
+        const distractors = [];
+        while (distractors.length < 3 && distractors.length < pool.length - 1) {
+          const c = pool[Math.floor(Math.random() * pool.length)];
+          if (c.past !== target.past && !distractors.some(d => d.past === c.past)) distractors.push(c);
+        }
+        const choices = [target, ...distractors].sort(() => Math.random() - 0.5);
+        const ansIdx = choices.indexOf(target);
+        q = {
+          mode: 'verbs',
+          promptZh: '盲听这个不规则过去式，选出对应的动词：',
+          audioText: target.past,
+          answerIdx: ansIdx,
+          cols: 2,
+          options: choices.map(c => ({ label: `${c.past}（${c.base}）`, sub: c.zh })),
+          explainHtml: `<strong>${escapeHtml(target.base)}</strong> ${escapeHtml(target.baseIpa)} → <strong>${escapeHtml(target.past)}</strong> ${escapeHtml(target.pastIpa)} → <strong>${escapeHtml(target.pp)}</strong> ${escapeHtml(target.ppIpa)}（${escapeHtml(target.zh)}）${target.trapNote ? '<br/>⚠️ ' + escapeHtml(target.trapNote) : ''}`
+        };
+      }
+      earQuizState.current = q;
+      earQuizState.answered = false;
+      renderEarQuizStage();
+      if (autoPlay && q) speakEnglish(q.audioText, phoneticsRate);
+    }
+
+    function renderEarQuizStage(pickedIdx) {
+      const pill = document.getElementById('earQuizScorePill');
+      if (pill) pill.textContent = `得分 ${earQuizState.right} / ${earQuizState.total} · 连对 ${earQuizState.streak}`;
+      const stage = document.getElementById('earQuizStage');
+      const q = earQuizState.current;
+      if (!stage || !q) return;
+
+      stage.innerHTML = `
+        <div style="font-size:0.95rem; font-weight:700; margin-bottom:12px;">${escapeHtml(q.promptZh)}</div>
+        <div style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="speakEnglish('${escapeHtml(q.audioText).replace(/'/g, "\\'")}', phoneticsRate)">🔊 播放发音</button>
+          <button class="btn btn-soft" onclick="speakEnglish('${escapeHtml(q.audioText).replace(/'/g, "\\'")}', 0.65)">🐢 0.65x 超慢速听</button>
+          <button class="btn btn-soft" onclick="nextEarQuizQuestion(true)">换一题 →</button>
+        </div>
+        <div class="ear-choice-grid ${q.cols === 3 ? 'cols-3' : ''}">
+          ${q.options.map((opt, i) => {
+            let cls = 'ear-choice-btn';
+            if (earQuizState.answered) {
+              if (i === q.answerIdx) cls += ' correct';
+              else if (i === pickedIdx) cls += ' wrong';
+            }
+            return `
+              <button class="${cls}" onclick="answerEarQuiz(${i})">
+                <div>${escapeHtml(opt.label)}</div>
+                <div style="font-size:0.78rem; color:var(--text-muted); font-weight:600; margin-top:3px;">${escapeHtml(opt.sub)}</div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        ${earQuizState.answered ? `
+          <div class="quiz-feedback show" style="text-align:left; margin-top:14px;">
+            <div><strong>${pickedIdx === q.answerIdx ? '✅ 听准了！' : '💡 没关系，对比听一下差别：'}</strong></div>
+            <div style="margin-top:4px; line-height:1.65;">${q.explainHtml}</div>
+            <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+              ${q.mode === 'pairs' ? `<button class="btn btn-soft btn-sm" onclick="speakSequence(['${escapeHtml(q.options[0].label)}','${escapeHtml(q.options[1].label)}'], 0.8)">🔁 对比连读两个词</button>` : ''}
+              <button class="btn btn-primary btn-sm" onclick="nextEarQuizQuestion(true)">下一题 →</button>
+            </div>
+          </div>
+        ` : ''}
+      `;
+    }
+
+    function answerEarQuiz(idx) {
+      if (!earQuizState.current || earQuizState.answered) return;
+      earQuizState.answered = true;
+      earQuizState.total++;
+      if (idx === earQuizState.current.answerIdx) {
+        earQuizState.right++;
+        earQuizState.streak++;
+      } else {
+        earQuizState.streak = 0;
+      }
+      renderEarQuizStage(idx);
+    }
+
+    function initPhoneticsModule() {
+      renderPhoneticsIpa();
+      renderPhoneticsEd();
+      renderPhoneticsVerbs();
     }
 
     // ============ AUDIO PLAYER EVENTS ============
@@ -3609,6 +4170,7 @@
       if (!currentEpisodeId) renderBbcList();
     }
 
+    initPhoneticsModule();
     renderAll();
   </script>
 </body>
