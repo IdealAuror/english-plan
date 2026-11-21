@@ -32,7 +32,7 @@
       --purple-soft: #f3e8ff;
       --shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
       --radius: 16px;
-      --tabbar-bg: rgba(255, 255, 255, 0.9);
+      --tabbar-bg: rgba(255, 255, 255, 0.92);
     }
 
     [data-theme="dark"] {
@@ -54,7 +54,7 @@
       --purple: #a78bfa;
       --purple-soft: rgba(167, 139, 250, 0.14);
       --shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
-      --tabbar-bg: rgba(24, 31, 44, 0.92);
+      --tabbar-bg: rgba(24, 31, 44, 0.94);
     }
 
     * {
@@ -75,7 +75,7 @@
     }
 
     .container {
-      max-width: 1020px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 18px 16px;
     }
@@ -94,9 +94,7 @@
       font-size: 0.84rem;
       box-shadow: var(--shadow);
     }
-
     .ios-install-banner.show { display: flex; }
-
     .ios-install-close {
       background: var(--surface-soft);
       border: none;
@@ -119,11 +117,9 @@
       position: relative;
       overflow: hidden;
     }
-
     [data-theme="dark"] .hero {
       background: linear-gradient(135deg, #1b285c 0%, #273d8c 55%, #344ea8 100%);
     }
-
     .hero-top {
       display: flex;
       justify-content: space-between;
@@ -131,26 +127,22 @@
       gap: 14px;
       flex-wrap: wrap;
     }
-
     .hero h1 {
       font-size: 1.65rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 6px;
     }
-
     .hero p {
       opacity: 0.92;
       font-size: 0.93rem;
-      max-width: 650px;
+      max-width: 660px;
     }
-
     .hero-actions {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
-
     .hero-btn {
       background: rgba(255, 255, 255, 0.16);
       color: #fff;
@@ -164,7 +156,6 @@
       -webkit-backdrop-filter: blur(6px);
       transition: background 0.15s;
     }
-
     .hero-btn:hover { background: rgba(255, 255, 255, 0.26); }
 
     .badges {
@@ -173,7 +164,6 @@
       gap: 7px;
       margin-top: 14px;
     }
-
     .badge {
       background: rgba(255, 255, 255, 0.16);
       padding: 4px 11px;
@@ -188,7 +178,6 @@
       gap: 10px;
       margin-top: 18px;
     }
-
     .stat-card {
       background: rgba(255, 255, 255, 0.14);
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -197,26 +186,16 @@
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
     }
-
-    .stat-label {
-      font-size: 0.76rem;
-      opacity: 0.86;
-    }
-
-    .stat-value {
-      font-size: 1.38rem;
-      font-weight: 800;
-      margin-top: 2px;
-    }
+    .stat-label { font-size: 0.76rem; opacity: 0.86; }
+    .stat-value { font-size: 1.38rem; font-weight: 800; margin-top: 2px; }
 
     /* Desktop Sticky Tabs */
     .nav-wrap {
       position: sticky;
       top: 10px;
-      z-index: 20;
+      z-index: 25;
       margin: 18px 0;
     }
-
     .nav-tabs {
       display: flex;
       gap: 6px;
@@ -227,22 +206,20 @@
       box-shadow: var(--shadow);
       overflow-x: auto;
     }
-
     .tab-btn {
       flex: 1;
-      min-width: 120px;
+      min-width: 110px;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: 10px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.18s;
       white-space: nowrap;
     }
-
     .tab-btn:hover { color: var(--text); background: var(--surface-soft); }
     .tab-btn.active {
       background: var(--primary);
@@ -250,7 +227,7 @@
       box-shadow: 0 3px 10px rgba(59, 91, 219, 0.25);
     }
 
-    /* Mobile Bottom Native-Style Tab Bar */
+    /* Mobile Bottom Native-Style Tab Bar (5 tabs) */
     .mobile-tabbar {
       display: none;
       position: fixed;
@@ -262,11 +239,10 @@
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-top: 1px solid var(--border);
-      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
+      padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
     }
-
     .mobile-tab-btn {
       border: none;
       background: transparent;
@@ -276,14 +252,13 @@
       align-items: center;
       justify-content: center;
       gap: 2px;
-      padding: 5px 4px;
+      padding: 5px 2px;
       border-radius: 10px;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
       cursor: pointer;
     }
-
-    .mobile-tab-btn .icon { font-size: 1.2rem; line-height: 1.2; }
+    .mobile-tab-btn .icon { font-size: 1.15rem; line-height: 1.2; }
     .mobile-tab-btn.active { color: var(--primary); background: var(--primary-soft); }
 
     .tab-panel { display: none; animation: fadeIn 0.2s ease; }
@@ -303,7 +278,6 @@
       box-shadow: var(--shadow);
       margin-bottom: 16px;
     }
-
     .card-header {
       display: flex;
       justify-content: space-between;
@@ -312,9 +286,8 @@
       margin-bottom: 14px;
       flex-wrap: wrap;
     }
-
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -326,10 +299,9 @@
       align-items: center;
       padding: 3px 10px;
       border-radius: 999px;
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 700;
     }
-
     .pill-blue { background: var(--primary-soft); color: var(--primary); }
     .pill-green { background: var(--emerald-soft); color: var(--emerald); }
     .pill-amber { background: var(--amber-soft); color: var(--amber); }
@@ -343,12 +315,7 @@
     }
 
     /* Checklists */
-    .check-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
+    .check-list { display: flex; flex-direction: column; gap: 10px; }
     .check-item {
       display: flex;
       align-items: flex-start;
@@ -360,9 +327,7 @@
       cursor: pointer;
       transition: all 0.15s;
     }
-
     .check-item:hover { border-color: var(--primary); }
-
     .check-item input[type="checkbox"] {
       width: 22px;
       height: 22px;
@@ -371,29 +336,29 @@
       cursor: pointer;
       flex-shrink: 0;
     }
-
     .check-item.done {
       background: var(--emerald-soft);
       border-color: rgba(15, 157, 110, 0.25);
     }
+    .check-item.done .check-title { text-decoration: line-through; opacity: 0.72; }
+    .check-title { font-weight: 700; font-size: 0.94rem; display: block; }
+    .check-desc { font-size: 0.84rem; color: var(--text-muted); margin-top: 2px; display: block; }
 
-    .check-item.done .check-title {
-      text-decoration: line-through;
-      opacity: 0.72;
-    }
-
-    .check-title {
+    .inline-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.78rem;
       font-weight: 700;
-      font-size: 0.94rem;
-      display: block;
+      border: none;
+      cursor: pointer;
     }
-
-    .check-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-      display: block;
-    }
+    .inline-link-btn:hover { background: var(--primary); color: #fff; }
 
     /* Minimum Viable Banner */
     .mvp-box {
@@ -408,26 +373,27 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-
-    .mvp-box p {
-      font-size: 0.86rem;
-      color: var(--text);
-      flex: 1;
-      min-width: 200px;
-    }
+    .mvp-box p { font-size: 0.86rem; color: var(--text); flex: 1; min-width: 200px; }
 
     .btn {
       border: none;
       border-radius: 10px;
       padding: 9px 15px;
-      font-size: 0.87rem;
+      font-size: 0.86rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      text-decoration: none;
     }
-
+    .btn-sm { padding: 6px 11px; font-size: 0.8rem; border-radius: 8px; }
     .btn-primary { background: var(--primary); color: #fff; }
     .btn-primary:hover { background: var(--primary-hover); }
+    .btn-emerald { background: var(--emerald); color: #fff; }
+    .btn-emerald:hover { opacity: 0.92; }
     .btn-soft { background: var(--surface-soft); color: var(--text); border: 1px solid var(--border); }
     .btn-soft:hover { border-color: var(--primary); color: var(--primary); }
     .btn-amber { background: var(--amber); color: #fff; }
@@ -441,7 +407,6 @@
       gap: 6px;
       margin-top: 12px;
     }
-
     .day-dot {
       aspect-ratio: 1;
       border-radius: 8px;
@@ -455,62 +420,33 @@
       color: var(--text-muted);
       font-weight: 600;
     }
-
     .day-dot.partial { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
     .day-dot.full { background: var(--emerald); border-color: var(--emerald); color: #fff; }
     .day-dot.today { box-shadow: 0 0 0 2px var(--primary); }
 
     /* Table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-    }
-
-    th, td {
-      padding: 10px 11px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    th {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: var(--surface-soft);
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th, td { padding: 10px 11px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); font-size: 0.8rem; font-weight: 700; background: var(--surface-soft); }
 
     /* Phases */
     .phase-card { border-left: 4px solid var(--primary); }
     .phase-card.p2 { border-left-color: var(--emerald); }
     .phase-card.p3 { border-left-color: var(--amber); }
     .phase-card.p4 { border-left-color: var(--purple); }
-
     .phase-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin: 14px 0;
     }
-
     .mini-box {
       background: var(--surface-soft);
       border-radius: 12px;
       padding: 13px 14px;
     }
-
-    .mini-box h4 {
-      font-size: 0.86rem;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .mini-box ul, .mini-box ol {
-      padding-left: 17px;
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
+    .mini-box h4 { font-size: 0.86rem; color: var(--primary); margin-bottom: 6px; }
+    .mini-box ul, .mini-box ol { padding-left: 17px; font-size: 0.85rem; color: var(--text); }
     .mini-box li { margin-bottom: 4px; }
 
     /* Grammar Visualizer */
@@ -521,29 +457,33 @@
       margin-bottom: 14px;
       border: 1px solid var(--border);
     }
-
     .sentence-en {
       font-size: 1rem;
-      line-height: 1.8;
+      line-height: 1.75;
       font-weight: 600;
       margin-bottom: 10px;
     }
-
     .hl-core {
       background: var(--primary-soft);
       color: var(--primary);
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 6px;
       font-weight: 800;
     }
-
     .hl-mod {
       background: var(--amber-soft);
       color: var(--amber);
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 6px;
+      font-weight: 700;
     }
-
+    .hl-tip {
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
     .demo-breakdown {
       display: none;
       margin-top: 12px;
@@ -551,7 +491,6 @@
       border-top: 1px dashed var(--border);
       font-size: 0.88rem;
     }
-
     .demo-breakdown.open { display: block; }
 
     /* Form Inputs */
@@ -561,25 +500,18 @@
       flex-wrap: wrap;
       margin-bottom: 14px;
     }
-
-    input[type="text"], input[type="number"], input[type="date"], textarea {
+    input[type="text"], input[type="search"], input[type="number"], input[type="date"], textarea {
       background: var(--surface-soft);
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 9px 12px;
-      font-size: 16px; /* Prevents iOS Safari zoom on input focus */
+      font-size: 16px;
       font-family: inherit;
       outline: none;
     }
-
     input:focus, textarea:focus { border-color: var(--primary); }
-
-    textarea {
-      width: 100%;
-      min-height: 82px;
-      resize: vertical;
-    }
+    textarea { width: 100%; min-height: 82px; resize: vertical; }
 
     .note-item {
       background: var(--surface-soft);
@@ -591,12 +523,7 @@
       align-items: flex-start;
       gap: 12px;
     }
-
-    .note-meta {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+    .note-meta { font-size: 0.76rem; color: var(--text-muted); margin-top: 4px; }
 
     /* Progress Bar */
     .progress-track {
@@ -606,7 +533,6 @@
       overflow: hidden;
       margin-top: 8px;
     }
-
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, var(--primary), var(--emerald));
@@ -624,6 +550,661 @@
       overflow-x: auto;
     }
 
+    /* ============ BBC 6 MINUTE ENGLISH MODULE ============ */
+    .bbc-toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .bbc-search {
+      flex: 1;
+      min-width: 210px;
+    }
+    .chip-bar {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .chip {
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--primary); color: var(--primary); }
+    .chip.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .ep-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .ep-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 15px 16px;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      position: relative;
+    }
+    .ep-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59, 91, 219, 0.1);
+    }
+    .ep-card.studied {
+      border-left: 4px solid var(--emerald);
+    }
+    .ep-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .ep-num {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .ep-date {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .ep-title-en {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.38;
+      color: var(--text);
+    }
+    .ep-title-zh {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .ep-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Episode Reader Top Bar */
+    .reader-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .reader-hero {
+      border-left: 4px solid var(--primary);
+    }
+    .reader-title-en {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.32;
+      margin-top: 8px;
+    }
+    .reader-title-zh {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .reader-summary-box {
+      background: var(--surface-soft);
+      border-radius: 12px;
+      padding: 13px 15px;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+    .reader-summary-zh {
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 0.86rem;
+    }
+
+    /* Custom Audio Player */
+    .audio-card {
+      background: linear-gradient(135deg, rgba(59, 91, 219, 0.08), rgba(15, 157, 110, 0.07));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .audio-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .play-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(59, 91, 219, 0.28);
+    }
+    .play-circle:hover { background: var(--primary-hover); }
+    .audio-seek-wrap {
+      flex: 1;
+      min-width: 170px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .audio-seek {
+      width: 100%;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+    .audio-time {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .audio-sub-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .speed-group {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .speed-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border-radius: 7px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .speed-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Interactive Quiz */
+    .quiz-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 15px 16px;
+      margin-top: 14px;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .quiz-opt {
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .quiz-opt:hover { border-color: var(--primary); }
+    .quiz-opt.correct {
+      background: var(--emerald-soft);
+      border-color: var(--emerald);
+      color: var(--text);
+    }
+    .quiz-opt.wrong {
+      background: var(--rose-soft);
+      border-color: var(--rose);
+      color: var(--text);
+    }
+    .quiz-opt-en { font-weight: 700; font-size: 0.86rem; display: block; }
+    .quiz-opt-zh { font-size: 0.78rem; color: var(--text-muted); display: block; margin-top: 2px; }
+    .quiz-feedback {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--emerald-soft);
+      border: 1px solid rgba(15, 157, 110, 0.25);
+      font-size: 0.85rem;
+      display: none;
+    }
+    .quiz-feedback.show { display: block; }
+
+    /* Reader Inner Section Tabs */
+    .reader-subtabs {
+      display: flex;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+      overflow-x: auto;
+    }
+    .subtab-btn {
+      flex: 1;
+      min-width: 110px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 9px 10px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .subtab-btn:hover { background: var(--surface-soft); color: var(--text); }
+    .subtab-btn.active { background: var(--primary); color: #fff; }
+
+    /* Transcript Turns */
+    .transcript-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .seg-group {
+      display: inline-flex;
+      background: var(--surface-soft);
+      padding: 3px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      gap: 3px;
+    }
+    .seg-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .seg-btn.active {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .turn-list { display: flex; flex-direction: column; gap: 10px; }
+    .turn-item {
+      background: var(--surface-soft);
+      border: 1px solid transparent;
+      border-left: 4px solid transparent;
+      border-radius: 13px;
+      padding: 13px 15px;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .turn-item:hover { border-color: var(--border); }
+    .turn-item.playing {
+      background: var(--surface);
+      border-color: var(--primary);
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 6px 22px rgba(59, 91, 219, 0.14);
+    }
+    .turn-progress-track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: transparent;
+      overflow: hidden;
+    }
+    .turn-item.playing .turn-progress-track {
+      background: var(--primary-soft);
+    }
+    .turn-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--emerald));
+      transition: width 0.08s linear;
+    }
+
+    /* Karaoke word-by-word highlight */
+    .k-word {
+      transition: color 0.12s ease, background 0.12s ease;
+      border-radius: 4px;
+    }
+    .turn-item.playing .k-word.spoken {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .turn-item.playing .k-word.current {
+      color: var(--primary);
+      font-weight: 800;
+      background: var(--primary-soft);
+      border-bottom: 2.5px solid var(--primary);
+      padding: 0 3px;
+    }
+
+    /* Animated Equalizer Bars */
+    .playing-eq {
+      display: none;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+      margin-left: 4px;
+    }
+    .turn-item.playing .playing-eq { display: inline-flex; }
+    .playing-eq i {
+      display: block;
+      width: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      animation: eqBounce 0.75s ease-in-out infinite;
+    }
+    .playing-eq i:nth-child(1) { height: 5px; animation-delay: 0s; }
+    .playing-eq i:nth-child(2) { height: 11px; animation-delay: 0.2s; }
+    .playing-eq i:nth-child(3) { height: 7px; animation-delay: 0.4s; }
+    @keyframes eqBounce {
+      0%, 100% { transform: scaleY(0.45); }
+      50% { transform: scaleY(1.15); }
+    }
+
+    .turn-ts {
+      border: none;
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .turn-ts:hover, .turn-item.playing .turn-ts {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Floating Bottom Karaoke Lyric Bar */
+    .floating-lyric-bar {
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%) translateY(130%);
+      width: min(980px, calc(100vw - 24px));
+      background: var(--tabbar-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--primary);
+      border-radius: 16px;
+      padding: 10px 14px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.2);
+      z-index: 45;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.26s ease;
+    }
+    .floating-lyric-bar.show {
+      transform: translateX(-50%) translateY(0);
+    }
+    .flb-text {
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+    .flb-en {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .flb-en .flb-cur {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1px;
+    }
+    .flb-zh {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+    .flb-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 760px) {
+      .floating-lyric-bar {
+        bottom: calc(68px + env(safe-area-inset-bottom));
+        padding: 8px 10px;
+        gap: 8px;
+      }
+      .flb-hide-sm { display: none; }
+    }
+    .turn-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .speaker-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+    .sp-0 { background: var(--primary-soft); color: var(--primary); }
+    .sp-1 { background: var(--emerald-soft); color: var(--emerald); }
+    .sp-2 { background: var(--purple-soft); color: var(--purple); }
+    .sp-3 { background: var(--amber-soft); color: var(--amber); }
+
+    .turn-en {
+      font-size: 0.98rem;
+      line-height: 1.72;
+      color: var(--text);
+    }
+    .font-lg .turn-en { font-size: 1.12rem; line-height: 1.8; }
+    .turn-zh {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+    }
+    .font-lg .turn-zh { font-size: 0.98rem; }
+    .mode-en .turn-zh { display: none; }
+    .mode-en .turn-item.peek .turn-zh { display: block; }
+    .mode-en .turn-item { cursor: pointer; }
+
+    .vocab-hl {
+      background: var(--amber-soft);
+      color: var(--text);
+      padding: 0 4px;
+      border-radius: 4px;
+      border-bottom: 2px solid var(--amber);
+      font-weight: 700;
+    }
+
+    .turn-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .micro-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 7px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .micro-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Sentence Analysis Cards inside Episode */
+    .car-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      margin-top: 8px;
+      font-size: 0.86rem;
+    }
+    .car-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+    .car-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.84rem;
+      background: var(--surface-soft);
+      padding: 2px 7px;
+      border-radius: 6px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Vocab & Phrase Cards */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .vocab-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 14px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .vocab-word-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .vocab-word {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .vocab-pos {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--purple);
+      background: var(--purple-soft);
+      padding: 1px 7px;
+      border-radius: 6px;
+    }
+    .vocab-zh { font-size: 0.92rem; font-weight: 700; color: var(--text); }
+    .vocab-def-en { font-size: 0.82rem; color: var(--text-muted); }
+    .vocab-ex {
+      font-size: 0.82rem;
+      color: var(--text);
+      background: var(--surface);
+      border-left: 3px solid var(--primary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-style: italic;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(84px + env(safe-area-inset-bottom));
+      transform: translateX(-50%) translateY(20px);
+      background: #18202c;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    [data-theme="dark"] .toast { background: #eef2f7; color: #18202c; }
+
     .footer-bar {
       display: flex;
       justify-content: space-between;
@@ -640,20 +1221,22 @@
       .nav-wrap { display: none; }
       .mobile-tabbar { display: grid; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .grid-2, .phase-grid { grid-template-columns: 1fr; }
+      .grid-2, .phase-grid, .ep-grid, .vocab-grid, .quiz-options { grid-template-columns: 1fr; }
       .streak-bar { grid-template-columns: repeat(7, 1fr); }
       .hero { padding: 18px 16px; border-radius: 18px; }
       .hero h1 { font-size: 1.32rem; }
-      .card { padding: 16px; }
+      .card { padding: 15px; }
       .container { padding: 14px 12px; }
+      .reader-title-en { font-size: 1.15rem; }
     }
 
     @media print {
-      .nav-wrap, .mobile-tabbar, .ios-install-banner, .hero-actions, .btn, .mvp-box button, .input-row, .footer-bar button { display: none !important; }
+      .nav-wrap, .mobile-tabbar, .ios-install-banner, .hero-actions, .btn, .mvp-box button, .input-row, .footer-bar button, .reader-topbar, .reader-subtabs, .audio-card, .micro-btn, .floating-lyric-bar, .turn-ts, .playing-eq { display: none !important; }
       .tab-panel { display: block !important; page-break-inside: avoid; }
       body { background: #fff; color: #000; padding: 0; }
       .card { box-shadow: none; border: 1px solid #ccc; }
       .demo-breakdown { display: block !important; }
+      .turn-zh { display: block !important; }
     }
   </style>
 </head>
@@ -670,7 +1253,7 @@
       <div class="hero-top">
         <div>
           <h1>英语 6 个月回血与雅思通关计划</h1>
-          <p>专为「曾有 8000+ 词汇底子 · 白天上班 · iPhone + 单程开车 10 分钟」定制：先唤醒旧词与语感、破除语法盲区，再顺势拿下日常沟通与雅思 6.5~7.0+。</p>
+          <p>专为「曾有 8000+ 词汇底子 · 白天上班 · iPhone + 单程开车 10 分钟」定制：内置 BBC 6 Minute English 最新 30 期音频、双语原文与长难句拆解。</p>
         </div>
         <div class="hero-actions">
           <button class="hero-btn" onclick="toggleTheme()" id="themeBtn">🌙 深色</button>
@@ -680,8 +1263,8 @@
 
       <div class="badges">
         <span class="badge">🧠 8000+ 休眠词唤醒</span>
+        <span class="badge">🎧 BBC 6Min 30期精读库</span>
         <span class="badge">🚗 10分钟开车闭环</span>
-        <span class="badge">📱 iPhone 专属配置</span>
         <span class="badge">🎯 日常沟通 + 雅思 6.5~7.0+</span>
       </div>
 
@@ -691,8 +1274,8 @@
           <div class="stat-value" id="statToday">0 / 4</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">累计打卡天数</div>
-          <div class="stat-value" id="statTotalDays">0 天</div>
+          <div class="stat-label">BBC 6Min 精读</div>
+          <div class="stat-value" id="statBbcDone">0 / 30</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">当前连续打卡</div>
@@ -708,10 +1291,11 @@
     <!-- Desktop Sticky Navigation Tabs -->
     <nav class="nav-wrap">
       <div class="nav-tabs">
-        <button class="tab-btn active" data-tab="daily" onclick="switchTab('daily')">📅 今日打卡 & 第1周</button>
-        <button class="tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">🗺️ 6个月四阶段</button>
+        <button class="tab-btn active" data-tab="daily" onclick="switchTab('daily')">📅 今日打卡</button>
+        <button class="tab-btn" data-tab="bbc6min" onclick="switchTab('bbc6min')">🎧 6Min 精读 (30期)</button>
+        <button class="tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">🗺️ 6个月路线图</button>
         <button class="tab-btn" data-tab="grammar" onclick="switchTab('grammar')">🧩 长难句急救</button>
-        <button class="tab-btn" data-tab="tools" onclick="switchTab('tools')">📈 iPhone配置 & 曲线</button>
+        <button class="tab-btn" data-tab="tools" onclick="switchTab('tools')">📈 iPhone & 曲线</button>
       </div>
     </nav>
 
@@ -729,6 +1313,7 @@
             <div>
               <span class="check-title">🚗 早通勤（10 分钟）：听 1 期短音频 + 大声跟念几句</span>
               <span class="check-desc">上车连蓝牙自动放 BBC 6 Minute English（后期换剑桥雅思听力），剩 4 分钟顺嘴跟念。</span>
+              <button type="button" class="inline-link-btn" onclick="event.preventDefault(); event.stopPropagation(); openBbcQuick();">🎧 打开 6Min 音频 & 精读库 →</button>
             </div>
           </label>
 
@@ -744,7 +1329,8 @@
             <input type="checkbox" onchange="toggleDaily('read_grammar', this.checked)" />
             <div>
               <span class="check-title">📖 午休 / 晚间（5~10 分钟）：扫一眼音频原文 + 拆 1 句长句</span>
-              <span class="check-desc">在「每日英语听力」里快速看一眼早上没听清的地方，记下 1~2 个实用口语短语。</span>
+              <span class="check-desc">直接点进「6Min 精读」看今天这期的中英原文、官方 6 词与「找车头、剥车厢」长难句拆解！</span>
+              <button type="button" class="inline-link-btn" onclick="event.preventDefault(); event.stopPropagation(); openBbcQuick();">📖 去精读原文 & 拆长难句 →</button>
             </div>
           </label>
 
@@ -764,7 +1350,7 @@
 
         <div style="margin-top: 18px;">
           <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.83rem; color:var(--text-muted); flex-wrap:wrap; gap:6px;">
-            <span>近 14 天足迹（绿=完成≥3项，黄=保底/部分）</span>
+            <span>近 14 天足迹（绿=完成≥3项，黄=保底/部分） · 累计打卡 <strong id="statTotalDaysInline">0</strong> 天</span>
             <span id="streakHint"></span>
           </div>
           <div class="streak-bar" id="streakBar"></div>
@@ -782,15 +1368,15 @@
             <label class="check-item" data-key="setup_1">
               <input type="checkbox" onchange="toggleKey('setup_1', this.checked)" />
               <div>
-                <span class="check-title">在自带「播客」和「每日英语听力」关注 BBC 6 Minute English</span>
-                <span class="check-desc">Apple Podcasts 配合 CarPlay/蓝牙最稳，每日英语听力用来看原文。</span>
+                <span class="check-title">在自带「播客」关注 BBC 6 Minute English（原文直接在本站看）</span>
+                <span class="check-desc">Apple Podcasts 配合 CarPlay/蓝牙最稳，午休直接在本 App「6Min 精读」页对照原文与拆句。</span>
               </div>
             </label>
             <label class="check-item" data-key="setup_6">
               <input type="checkbox" onchange="toggleKey('setup_6', this.checked)" />
               <div>
                 <span class="check-title">设好 iPhone「快捷指令自动化」：连车载蓝牙自动开播</span>
-                <span class="check-desc">详细步骤在「iPhone配置」页，一发动车子自动响，彻底免掏手机！</span>
+                <span class="check-desc">详细步骤在「iPhone & 曲线」页，一发动车子自动响，彻底免掏手机！</span>
               </div>
             </label>
             <label class="check-item" data-key="setup_2">
@@ -835,7 +1421,7 @@
               <input type="checkbox" onchange="toggleKey('w1_d1', this.checked)" />
               <div>
                 <span class="check-title">Day 1：跑通第一次闭环</span>
-                <span class="check-desc">早车听 1 期 6 Minute English → 午休筛 20 词+扫原文 → 晚车复听。</span>
+                <span class="check-desc">早车听 1 期 6 Minute English → 午休筛 20 词+在本页看原文拆句 → 晚车复听。</span>
               </div>
             </label>
             <label class="check-item" data-key="w1_d2">
@@ -877,7 +1463,7 @@
               <input type="checkbox" onchange="toggleKey('w1_d7', this.checked)" />
               <div>
                 <span class="check-title">Day 7（周日）：语法扫盲（下）+ 实操拆句</span>
-                <span class="check-desc">看完视频后半段（30 分钟）+ 挑本周播客里 2~3 个长句用「找车头法」拆一遍。</span>
+                <span class="check-desc">看完视频后半段（30 分钟）+ 在「6Min 精读」挑本周 3 个长难句练一遍「找车头法」。</span>
               </div>
             </label>
           </div>
@@ -916,8 +1502,8 @@
               <tr>
                 <td><strong>午休 / 晚间</strong></td>
                 <td>5~10 分钟</td>
-                <td>扫一眼早上音频原文 + 挑 1 句长句找主干</td>
-                <td>只记 1~2 个说话能用上的短语，不逐字精析</td>
+                <td>在本站「6Min 精读」扫双语原文 + 看长难句拆解</td>
+                <td>只记 1~2 个说话能用上的短语，一键存进备忘录</td>
               </tr>
               <tr>
                 <td><strong>晚开车通勤</strong></td>
@@ -931,7 +1517,178 @@
       </div>
     </section>
 
-    <!-- TAB 2: 6-MONTH ROADMAP -->
+    <!-- TAB 2: BBC 6 MINUTE ENGLISH LIBRARY & READER -->
+    <section id="tab-bbc6min" class="tab-panel">
+      <!-- LIST VIEW -->
+      <div id="bbcListView">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🎧 BBC 6 Minute English 精读库（最新 30 期 · 正好覆盖第 1 个月）</div>
+            <span class="pill pill-green" id="bbcProgressPill">已精读 0 / 30 期</span>
+          </div>
+          <p style="font-size:0.86rem; color:var(--text-muted);">
+            收录 BBC 官网 2026 年最新 30 期真实节目：每期内置<strong>官方音频（支持倍速/快退5秒）</strong>、<strong>开场互动 Quiz</strong>、<strong>逐段中英对照原文</strong>、<strong>6 个官方核心词 + 口语表达</strong>，以及<strong>「找车头 + 剥车厢」长难句拆解</strong>。
+          </p>
+          <div class="progress-track">
+            <div class="progress-fill" id="bbcProgressFill"></div>
+          </div>
+
+          <div class="bbc-toolbar" style="margin-top:14px;">
+            <input type="search" id="bbcSearchInput" class="bbc-search" placeholder="🔍 搜索英文/中文标题、核心词汇或话题（如 gold / sleep / AI）..." oninput="renderBbcList()" />
+            <button class="btn btn-primary btn-sm" id="bbcResumeBtn" onclick="resumeLastEpisode()">▶ 继续上次精读</button>
+            <button class="btn btn-soft btn-sm" onclick="openRandomUnstudied()">🎲 随机挑 1 期未学</button>
+          </div>
+
+          <div class="chip-bar" id="bbcTopicChips"></div>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px;" id="bbcFilterHint"></div>
+          <div class="ep-grid" id="bbcEpisodeGrid"></div>
+        </div>
+      </div>
+
+      <!-- READER VIEW -->
+      <div id="bbcReaderView" style="display:none;">
+        <div class="reader-topbar">
+          <button class="btn btn-soft btn-sm" onclick="closeEpisodeReader()">← 返回 30 期列表</button>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-soft btn-sm" id="btnPrevEp" onclick="navigateEpisode(-1)">‹ 上一期</button>
+            <span class="pill pill-blue" id="readerEpIndexPill">#01 / 30</span>
+            <button class="btn btn-soft btn-sm" id="btnNextEp" onclick="navigateEpisode(1)">下一期 ›</button>
+          </div>
+        </div>
+
+        <!-- Episode Header + Audio Player + Quiz -->
+        <div class="card reader-hero">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+              <span class="ep-num" id="rEpNum">#01</span>
+              <span class="pill pill-purple" id="rEpTopic">主题</span>
+              <span class="ep-date" id="rEpDate">2026-11-19</span>
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button class="btn btn-soft btn-sm" id="btnToggleListened" onclick="toggleEpisodeFlag('listened')">🎧 标记已听完</button>
+              <button class="btn btn-soft btn-sm" id="btnToggleStudied" onclick="toggleEpisodeFlag('studied')">📖 标记已精读</button>
+            </div>
+          </div>
+
+          <div class="reader-title-en" id="rTitleEn"></div>
+          <div class="reader-title-zh" id="rTitleZh"></div>
+
+          <div class="reader-summary-box">
+            <div id="rSummaryEn"></div>
+            <div class="reader-summary-zh" id="rSummaryZh"></div>
+          </div>
+
+          <!-- Built-in Official Audio Player -->
+          <div class="audio-card">
+            <audio id="bbcAudioEl" preload="metadata"></audio>
+            <div class="audio-controls-row">
+              <button class="play-circle" id="audioPlayBtn" onclick="toggleAudioPlay()" aria-label="播放/暂停">▶</button>
+              <button class="btn btn-soft btn-sm" onclick="seekAudioBy(-5)" title="快退 5 秒">↺ 5s</button>
+              <button class="btn btn-soft btn-sm" onclick="seekAudioBy(5)" title="快进 5 秒">5s ↻</button>
+              <div class="audio-seek-wrap">
+                <input type="range" id="audioSeek" class="audio-seek" min="0" max="100" value="0" step="0.1" oninput="onAudioSeekInput(this.value)" />
+                <div class="audio-time">
+                  <span id="audioCurTime">00:00</span>
+                  <span id="audioStatusHint">BBC 官方原声 MP3</span>
+                  <span id="audioDurTime">06:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="audio-sub-row">
+              <div class="speed-group" id="speedGroup">
+                <span style="font-size:0.76rem; color:var(--text-muted); font-weight:700; margin-right:4px; align-self:center;">倍速:</span>
+                <button class="speed-btn" data-rate="0.75" onclick="setAudioRate(0.75)">0.75x</button>
+                <button class="speed-btn" data-rate="0.85" onclick="setAudioRate(0.85)">0.85x</button>
+                <button class="speed-btn active" data-rate="1" onclick="setAudioRate(1)">1.0x</button>
+                <button class="speed-btn" data-rate="1.15" onclick="setAudioRate(1.15)">1.15x</button>
+                <button class="speed-btn" data-rate="1.25" onclick="setAudioRate(1.25)">1.25x</button>
+              </div>
+              <div class="speed-group" title="如果歌词稍快或稍慢，可随时微调或直接点句子上的「🎯播到这」一键对齐">
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:700; align-self:center;">🎤歌词微调:</span>
+                <button class="speed-btn" onclick="nudgeLyrics(-2)">-2s</button>
+                <button class="speed-btn" onclick="nudgeLyrics(-0.5)">-0.5s</button>
+                <span id="lyricOffsetLabel" style="font-size:0.74rem; font-weight:800; color:var(--primary); align-self:center; min-width:38px; text-align:center;">0.0s</span>
+                <button class="speed-btn" onclick="nudgeLyrics(0.5)">+0.5s</button>
+                <button class="speed-btn" onclick="nudgeLyrics(2)">+2s</button>
+                <button class="speed-btn" onclick="resetEpisodeSync()" title="重置本期校准">重置</button>
+              </div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <a class="btn btn-soft btn-sm" id="rOfficialLink" href="#" target="_blank" rel="noopener">🌐 BBC 官网</a>
+                <a class="btn btn-soft btn-sm" id="rPdfLink" href="#" target="_blank" rel="noopener">📄 官方 PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Opening Quiz -->
+          <div class="quiz-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+              <strong style="font-size:0.9rem;">❓ 本期开场 Quiz（边听边猜答案）</strong>
+              <button class="micro-btn" onclick="revealQuizAnswer()">👀 直接揭晓答案</button>
+            </div>
+            <div style="font-weight:700; font-size:0.93rem; margin-top:6px;" id="rQuizQEn"></div>
+            <div style="font-size:0.84rem; color:var(--text-muted); margin-top:2px;" id="rQuizQZh"></div>
+            <div class="quiz-options" id="rQuizOptions"></div>
+            <div class="quiz-feedback" id="rQuizFeedback"></div>
+          </div>
+        </div>
+
+        <!-- Inner Section Switcher -->
+        <div class="reader-subtabs">
+          <button class="subtab-btn active" data-sub="transcript" onclick="switchReaderSub('transcript')">📖 双语原文</button>
+          <button class="subtab-btn" data-sub="sentences" onclick="switchReaderSub('sentences')" id="subTabSentences">🚂 长难句拆解</button>
+          <button class="subtab-btn" data-sub="vocab" onclick="switchReaderSub('vocab')" id="subTabVocab">📚 核心词 & 口语</button>
+          <button class="subtab-btn" data-sub="all" onclick="switchReaderSub('all')">📋 全部同屏</button>
+        </div>
+
+        <!-- SECTION A: BILINGUAL TRANSCRIPT -->
+        <div class="card" id="secTranscript">
+          <div class="transcript-controls">
+            <div class="seg-group">
+              <button class="seg-btn active" id="modeBilingualBtn" onclick="setTranscriptMode('bilingual')">中英对照</button>
+              <button class="seg-btn" id="modeEnBtn" onclick="setTranscriptMode('en')">仅看英文（点句显译文）</button>
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+              <button class="btn btn-primary btn-sm" id="btnToggleFollow" onclick="toggleAutoFollow()">🎤 歌词跟随: 开</button>
+              <button class="btn btn-soft btn-sm" id="btnToggleVocabHl" onclick="toggleVocabHighlight()">✨ 核心词高亮: 开</button>
+              <button class="btn btn-soft btn-sm" id="btnToggleFontSize" onclick="toggleTranscriptFont()">Aa 字体: 标准</button>
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:10px;">
+            💡 <strong>卡拉OK同步提示：</strong>点任意段落左上角时间 <span class="pill pill-blue" style="padding:1px 6px;">▶ 00:15</span> 可直接跳播；播放时若稍有偏差，点当前正听到的句子右上角 <strong>「🎯 播到这」</strong> 即可一键精准校准并永久记住！
+          </div>
+          <div class="turn-list" id="rTranscriptList"></div>
+        </div>
+
+        <!-- SECTION B: LONG & COMPLEX SENTENCES -->
+        <div class="card" id="secSentences" style="display:none;">
+          <div class="card-header">
+            <div class="card-title">🚂 本期精选长难句拆解（找车头 + 剥车厢）</div>
+            <button class="btn btn-soft btn-sm" onclick="toggleAllEpisodeBreakdowns()">👁️ 全部展开 / 收起</button>
+          </div>
+          <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">
+            全部摘自本期音频原句！先自己抓<span class="hl-core">车头主干</span>，再剥离后面的<span class="hl-mod">修饰小车厢</span>，练 1 个月看雅思阅读长句会飞快。
+          </p>
+          <div id="rSentencesList"></div>
+        </div>
+
+        <!-- SECTION C: VOCABULARY & SPOKEN PHRASES -->
+        <div class="card" id="secVocab" style="display:none;">
+          <div class="card-header">
+            <div class="card-title">📚 本期 6 个 BBC 官方核心词汇</div>
+            <span class="pill pill-amber">点击 🔊 可听英式发音</span>
+          </div>
+          <div class="vocab-grid" id="rVocabGrid"></div>
+
+          <div class="card-header" style="margin-top:22px;">
+            <div class="card-title">💬 本期地道口语表达 & 高频搭配</div>
+            <span class="pill pill-green">开车和 AI 聊天直接用</span>
+          </div>
+          <div class="vocab-grid" id="rPhrasesGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: 6-MONTH ROADMAP -->
     <section id="tab-roadmap" class="tab-panel">
       <div class="card">
         <div class="card-header">
@@ -962,7 +1719,7 @@
             <h4>📱 午休/晚间（15 分钟/天）</h4>
             <ul>
               <li>10 分钟：筛 20 个雅思核心词（认识就斩）。</li>
-              <li>5 分钟：扫一眼播客原文，把没听清的词标出来。</li>
+              <li>5 分钟：在本站「6Min 精读」扫双语原文 + 拆 1 句长难句。</li>
             </ul>
           </div>
           <div class="mini-box">
@@ -1128,7 +1885,7 @@
       </div>
     </section>
 
-    <!-- TAB 3: GRAMMAR & LONG SENTENCES -->
+    <!-- TAB 4: GRAMMAR & LONG SENTENCES -->
     <section id="tab-grammar" class="tab-panel">
       <div class="card">
         <div class="card-header">
@@ -1150,13 +1907,16 @@
           </ul>
         </div>
 
-        <h4 style="margin-bottom:10px;">👇 点击下方按钮，练习 3 个典型雅思长难句「剥主干」：</h4>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+          <h4>👇 点击下方按钮，练习 3 个入门例句（更多 100+ 真实原句在「🎧 6Min 精读」里！）：</h4>
+          <button class="btn btn-primary btn-sm" onclick="switchTab('bbc6min')">🎧 去 6Min 精读看 30 期长难句 →</button>
+        </div>
 
         <div class="sentence-demo">
           <div class="sentence-en">
             The app, which was launched last year, helps busy workers learn English by using short audio clips recorded by native speakers.
           </div>
-          <button class="btn btn-soft" onclick="toggleDemo('demo1')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <button class="btn btn-soft btn-sm" onclick="toggleDemo('demo1')">👁️ 显示 / 隐藏「找车头」拆解</button>
           <div class="demo-breakdown" id="demo1">
             <p><span class="hl-core">车头主干</span>：<strong>The app helps busy workers learn English.</strong>（这个 App 帮忙碌上班族学英语。）</p>
             <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>, which was launched last year,</code> → 补充说明 App（去年上线的）</p>
@@ -1169,7 +1929,7 @@
           <div class="sentence-en">
             People who drive to work every day often find it easier to practice speaking because they have a private space without worrying about mistakes.
           </div>
-          <button class="btn btn-soft" onclick="toggleDemo('demo2')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <button class="btn btn-soft btn-sm" onclick="toggleDemo('demo2')">👁️ 显示 / 隐藏「找车头」拆解</button>
           <div class="demo-breakdown" id="demo2">
             <p><span class="hl-core">车头主干</span>：<strong>People often find it easier to practice speaking.</strong>（人们常发现练口语更容易。）</p>
             <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>who drive to work every day</code> → 限定什么人（每天开车上班的人）</p>
@@ -1182,7 +1942,7 @@
           <div class="sentence-en">
             A recent study published in a leading journal suggests that spending just 20 minutes a day on listening can significantly improve fluency over six months.
           </div>
-          <button class="btn btn-soft" onclick="toggleDemo('demo3')">👁️ 显示 / 隐藏「找车头」拆解</button>
+          <button class="btn btn-soft btn-sm" onclick="toggleDemo('demo3')">👁️ 显示 / 隐藏「找车头」拆解</button>
           <div class="demo-breakdown" id="demo3">
             <p><span class="hl-core">车头主干</span>：<strong>A recent study suggests that [spending 20 minutes can improve fluency].</strong>（一项近期研究表明，每天花 20 分钟能提升流利度。）</p>
             <p style="margin-top:6px;"><span class="hl-mod">车厢 1</span>：<code>published in a leading journal</code> → 补充研究出处（发表在顶级期刊上的）</p>
@@ -1238,9 +1998,8 @@
       </div>
     </section>
 
-    <!-- TAB 4: IPHONE SETUP, TOOLS, VOCAB CHART & NOTES -->
+    <!-- TAB 5: IPHONE SETUP, TOOLS, VOCAB CHART & NOTES -->
     <section id="tab-tools" class="tab-panel">
-      <!-- iPhone Exclusive Setup -->
       <div class="card" style="border-left: 4px solid var(--primary);">
         <div class="card-header">
           <div class="card-title">📱 iPhone + 开车 10 分钟专属神级配置</div>
@@ -1260,7 +2019,7 @@
             <h4>📲 App Store 极简装机（3 个足矣）</h4>
             <ul>
               <li><strong>系统自带「播客」</strong>：直接订阅 6 Minute English / All Ears English / NPR News Now，完美适配 CarPlay。</li>
-              <li><strong>每日英语听力</strong>：午休看播客中英原文 + 后期刷剑桥雅思听力真题。</li>
+              <li><strong>本站「6Min 精读」</strong>：午休直接看双语原文 + 长难句拆解 + 一键存备忘录，省去切 App！</li>
               <li><strong>不背单词 / 墨墨</strong>：选「雅思核心词」，放 iPhone 桌面小组件提醒筛词。</li>
               <li><strong>豆包 / ChatGPT</strong>：下班发车前开语音免提模式，边开边聊 8 分钟。</li>
               <li><strong>添加到主屏幕</strong>：在 Safari 点底部分享 ⬆️ →「添加到主屏幕」，本计划立刻变 iPhone 独立 App！</li>
@@ -1295,7 +2054,7 @@
           <div class="mini-box">
             <h4>🚗 10 分钟以内开车黄金音频</h4>
             <ul>
-              <li><strong>第 1 月回血</strong>：BBC 6 Minute English（6分钟，英音+词汇复盘）</li>
+              <li><strong>第 1 月回血</strong>：BBC 6 Minute English（6分钟，英音+词汇复盘，本站已内置 30 期精读）</li>
               <li><strong>第 2~3 月生活</strong>：剑桥雅思听力 Part 1 & 2 / All Ears English</li>
               <li><strong>第 4~5 月进阶</strong>：NPR News Now（5分钟快讯）/ 剑桥听力 Part 3 & 4</li>
               <li><strong>高密加餐</strong>：Scientific American 60-Second Science（1~2分钟/篇）</li>
@@ -1317,10 +2076,10 @@
       <div class="card">
         <div class="card-header">
           <div class="card-title">📝 我的地道表达 & 待拆长难句备忘录</div>
-          <span class="pill pill-purple">自动保存在本机</span>
+          <span class="pill pill-purple" id="notesCountPill">0 条记录</span>
         </div>
         <div style="margin-bottom:12px;">
-          <textarea id="noteInput" placeholder="把平时在播客或阅读里遇到的好表达、看不懂的长难句贴在这里..."></textarea>
+          <textarea id="noteInput" placeholder="把平时在播客或阅读里遇到的好表达、看不懂的长难句贴在这里（也可以在 6Min 精读页一键收藏）..."></textarea>
           <div style="margin-top:8px; display:flex; justify-content:flex-end;">
             <button class="btn btn-primary" onclick="addNote()">+ 存进备忘录</button>
           </div>
@@ -1331,20 +2090,41 @@
 
     <!-- Footer Data Management -->
     <footer class="footer-bar">
-      <div>💾 打卡、词汇曲线与笔记自动保存在当前设备本地（支持导出备份跨设备同步）。</div>
+      <div>💾 打卡、BBC 6Min 精读进度、词汇曲线与笔记自动保存在当前设备本地（支持导出备份跨设备同步）。</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
-        <button class="btn btn-soft" onclick="exportData()">📤 导出备份</button>
-        <button class="btn btn-soft" onclick="document.getElementById('importFile').click()">📥 导入备份</button>
+        <button class="btn btn-soft btn-sm" onclick="exportData()">📤 导出备份</button>
+        <button class="btn btn-soft btn-sm" onclick="document.getElementById('importFile').click()">📥 导入备份</button>
         <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)" />
-        <button class="btn btn-danger" onclick="resetAll()">🗑️ 重置</button>
+        <button class="btn btn-danger btn-sm" onclick="resetAll()">🗑️ 重置</button>
       </div>
     </footer>
   </div>
+
+  <!-- Floating Bottom Live Karaoke Bar -->
+  <div class="floating-lyric-bar" id="floatingLyricBar">
+    <button class="play-circle" style="width:36px;height:36px;font-size:0.9rem;" id="flbPlayBtn" onclick="toggleAudioPlay()" aria-label="播放/暂停">▶</button>
+    <button class="btn btn-soft btn-sm flb-hide-sm" onclick="seekAudioBy(-5)" title="快退 5 秒">↺5s</button>
+    <div class="flb-text" onclick="scrollToActiveTurn()" title="点击跳转到当前播放句">
+      <div class="flb-en" id="flbEn">点击播放，开启歌词同步跟随...</div>
+      <div class="flb-zh" id="flbZh"></div>
+    </div>
+    <div class="flb-controls">
+      <button class="micro-btn flb-hide-sm" onclick="nudgeLyrics(-1)" title="歌词提前 1 秒">-1s</button>
+      <button class="micro-btn flb-hide-sm" onclick="nudgeLyrics(1)" title="歌词延后 1 秒">+1s</button>
+      <button class="btn btn-primary btn-sm" onclick="scrollToActiveTurn()">📍定位</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastEl"></div>
 
   <!-- Mobile iPhone Bottom Tab Bar -->
   <nav class="mobile-tabbar" aria-label="底部导航">
     <button class="mobile-tab-btn active" data-tab="daily" onclick="switchTab('daily')">
       <span class="icon">📅</span><span>打卡</span>
+    </button>
+    <button class="mobile-tab-btn" data-tab="bbc6min" onclick="switchTab('bbc6min')">
+      <span class="icon">🎧</span><span>6Min</span>
     </button>
     <button class="mobile-tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">
       <span class="icon">🗺️</span><span>路线图</span>
@@ -1353,12 +2133,31 @@
       <span class="icon">🧩</span><span>长难句</span>
     </button>
     <button class="mobile-tab-btn" data-tab="tools" onclick="switchTab('tools')">
-      <span class="icon">📱</span><span>iPhone/记录</span>
+      <span class="icon">📱</span><span>记录</span>
     </button>
   </nav>
 
+  <!-- Load BBC 6 Minute English 30-Episode Dataset (works both online & offline file://) -->
+  <script src="data/bbc6min.js"></script>
+
   <script>
     const STORAGE_KEY = 'english_6m_ielts_plan_v1';
+    const BBC_EPISODES = Array.isArray(window.BBC_6MIN_EPISODES) ? window.BBC_6MIN_EPISODES : [];
+
+    let bbcFilterTopic = '全部';
+    let currentEpisodeId = null;
+    let currentReaderSub = 'transcript';
+    let transcriptMode = 'bilingual'; // 'bilingual' | 'en'
+    let vocabHighlightOn = true;
+    let transcriptLargeFont = false;
+    let autoFollowLyrics = true;
+    let currentTimeline = [];
+    let activeTurnIdx = -1;
+    let activeWordIdx = -1;
+    let karaokeRafId = null;
+    let currentAudioRate = 1;
+    let audioTriedFallback = false;
+    let toastTimer = null;
 
     function getTodayStr() {
       const d = new Date();
@@ -1374,6 +2173,9 @@
         iosBannerDismissed: false,
         checks: {},
         dailyLog: {},
+        bbcProgress: {},
+        bbcSync: {},
+        bbcLastId: null,
         vocabRecords: [
           { date: getTodayStr(), score: 1500, note: '初始估测基线（准备用 TestYourVocab 复测）' }
         ],
@@ -1394,7 +2196,10 @@
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return defaultState();
         const parsed = JSON.parse(raw);
-        return Object.assign(defaultState(), parsed);
+        const merged = Object.assign(defaultState(), parsed);
+        if (!merged.bbcProgress || typeof merged.bbcProgress !== 'object') merged.bbcProgress = {};
+        if (!merged.bbcSync || typeof merged.bbcSync !== 'object') merged.bbcSync = {};
+        return merged;
       } catch (e) {
         return defaultState();
       }
@@ -1407,13 +2212,31 @@
       renderAll();
     }
 
+    function showToast(msg) {
+      const el = document.getElementById('toastEl');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    }
+
     function switchTab(tabId) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('[data-tab]').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-tab') === tabId);
       });
-      document.getElementById('tab-' + tabId).classList.add('active');
+      const panel = document.getElementById('tab-' + tabId);
+      if (panel) panel.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openBbcQuick() {
+      switchTab('bbc6min');
+      if (state.bbcLastId && BBC_EPISODES.some(e => e.id === state.bbcLastId)) {
+        openEpisodeReader(state.bbcLastId);
+      } else if (BBC_EPISODES.length) {
+        openEpisodeReader(BBC_EPISODES[0].id);
+      }
     }
 
     function toggleTheme() {
@@ -1471,7 +2294,8 @@
     }
 
     function toggleDemo(id) {
-      document.getElementById(id).classList.toggle('open');
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('open');
     }
 
     function isDayCheckedIn(log) {
@@ -1509,7 +2333,10 @@
         ? state.vocabRecords[state.vocabRecords.length - 1].score
         : 1500;
 
-      return { todayCount, totalDays, streak, latestVocab, mvp: todayLog.mvp };
+      const bbcStudied = BBC_EPISODES.filter(ep => state.bbcProgress[ep.id]?.studied).length;
+      const bbcListened = BBC_EPISODES.filter(ep => state.bbcProgress[ep.id]?.listened).length;
+
+      return { todayCount, totalDays, streak, latestVocab, mvp: todayLog.mvp, bbcStudied, bbcListened };
     }
 
     function renderStreakBar() {
@@ -1534,6 +2361,976 @@
       });
     }
 
+    // ============ BBC 6 MINUTE ENGLISH LOGIC ============
+    function getEpProg(epId) {
+      if (!state.bbcProgress[epId]) {
+        state.bbcProgress[epId] = { listened: false, studied: false, quizPick: null };
+      }
+      return state.bbcProgress[epId];
+    }
+
+    function renderBbcList() {
+      const total = BBC_EPISODES.length;
+      const studiedCount = BBC_EPISODES.filter(e => state.bbcProgress[e.id]?.studied).length;
+      const listenedCount = BBC_EPISODES.filter(e => state.bbcProgress[e.id]?.listened).length;
+
+      document.getElementById('bbcProgressPill').textContent = `已精读 ${studiedCount} / ${total} 期 · 已听 ${listenedCount} 期`;
+      document.getElementById('bbcProgressFill').style.width = total ? `${Math.round((studiedCount / total) * 100)}%` : '0%';
+
+      const resumeBtn = document.getElementById('bbcResumeBtn');
+      const lastEp = BBC_EPISODES.find(e => e.id === state.bbcLastId);
+      if (lastEp) {
+        resumeBtn.textContent = `▶ 继续 #${String(lastEp.epNum).padStart(2, '0')} ${lastEp.titleZh.slice(0, 10)}${lastEp.titleZh.length > 10 ? '…' : ''}`;
+      } else {
+        resumeBtn.textContent = '▶ 从最新第 1 期开始';
+      }
+
+      // Build topic filter chips
+      const topics = ['全部', '未精读', '已精读', ...Array.from(new Set(BBC_EPISODES.map(e => e.topic).filter(Boolean)))];
+      const chipBar = document.getElementById('bbcTopicChips');
+      chipBar.innerHTML = topics.map(t => `
+        <button class="chip ${bbcFilterTopic === t ? 'active' : ''}" onclick="setBbcTopic('${escapeHtml(t)}')">${escapeHtml(t)}</button>
+      `).join('');
+
+      const q = (document.getElementById('bbcSearchInput').value || '').trim().toLowerCase();
+      const filtered = BBC_EPISODES.filter(ep => {
+        const prog = state.bbcProgress[ep.id] || {};
+        if (bbcFilterTopic === '未精读' && prog.studied) return false;
+        if (bbcFilterTopic === '已精读' && !prog.studied) return false;
+        if (bbcFilterTopic !== '全部' && bbcFilterTopic !== '未精读' && bbcFilterTopic !== '已精读' && ep.topic !== bbcFilterTopic) return false;
+        if (!q) return true;
+        const hay = [
+          ep.title, ep.titleZh, ep.topic, ep.date, ep.summary, ep.summaryZh,
+          ...(ep.vocab || []).map(v => `${v.word} ${v.zh}`),
+          ...(ep.phrases || []).map(p => `${p.en} ${p.zh}`)
+        ].join(' ').toLowerCase();
+        return hay.includes(q);
+      });
+
+      document.getElementById('bbcFilterHint').textContent = `当前显示 ${filtered.length} / ${total} 期节目`;
+
+      const grid = document.getElementById('bbcEpisodeGrid');
+      if (!filtered.length) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:30px;color:var(--text-muted);">没有匹配到相关节目，换个关键词或筛选条件试试吧！</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(ep => {
+        const prog = state.bbcProgress[ep.id] || {};
+        const badges = [];
+        if (prog.listened) badges.push('<span class="pill pill-blue">🎧 已听</span>');
+        if (prog.studied) badges.push('<span class="pill pill-green">✓ 已精读</span>');
+        return `
+          <div class="ep-card ${prog.studied ? 'studied' : ''}" onclick="openEpisodeReader('${ep.id}')">
+            <div>
+              <div class="ep-card-top">
+                <div style="display:flex;gap:6px;align-items:center;">
+                  <span class="ep-num">#${String(ep.epNum).padStart(2, '0')}</span>
+                  <span class="pill pill-purple">${escapeHtml(ep.topic || '综合')}</span>
+                </div>
+                <span class="ep-date">${escapeHtml(ep.date)}</span>
+              </div>
+              <div class="ep-title-en" style="margin-top:8px;">${escapeHtml(ep.title)}</div>
+              <div class="ep-title-zh">${escapeHtml(ep.titleZh || '')}</div>
+            </div>
+            <div class="ep-meta-row">
+              <span>📚 ${(ep.vocab || []).length}词 · 🚂 ${(ep.sentences || []).length}长难句 · 💬 ${(ep.transcript || []).length}段</span>
+              <div style="display:flex;gap:4px;">${badges.join('')}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setBbcTopic(topic) {
+      bbcFilterTopic = topic;
+      renderBbcList();
+    }
+
+    function resumeLastEpisode() {
+      if (state.bbcLastId && BBC_EPISODES.some(e => e.id === state.bbcLastId)) {
+        openEpisodeReader(state.bbcLastId);
+      } else if (BBC_EPISODES.length) {
+        openEpisodeReader(BBC_EPISODES[0].id);
+      }
+    }
+
+    function openRandomUnstudied() {
+      const pool = BBC_EPISODES.filter(e => !state.bbcProgress[e.id]?.studied);
+      const list = pool.length ? pool : BBC_EPISODES;
+      if (!list.length) return;
+      const pick = list[Math.floor(Math.random() * list.length)];
+      openEpisodeReader(pick.id);
+    }
+
+    function openEpisodeReader(epId) {
+      const idx = BBC_EPISODES.findIndex(e => e.id === epId);
+      if (idx < 0) return;
+      const ep = BBC_EPISODES[idx];
+      currentEpisodeId = ep.id;
+      state.bbcLastId = ep.id;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+
+      document.getElementById('bbcListView').style.display = 'none';
+      document.getElementById('bbcReaderView').style.display = 'block';
+
+      document.getElementById('readerEpIndexPill').textContent = `#${String(ep.epNum).padStart(2, '0')} / ${BBC_EPISODES.length}`;
+      document.getElementById('btnPrevEp').disabled = idx <= 0;
+      document.getElementById('btnNextEp').disabled = idx >= BBC_EPISODES.length - 1;
+
+      document.getElementById('rEpNum').textContent = `#${String(ep.epNum).padStart(2, '0')}`;
+      document.getElementById('rEpTopic').textContent = ep.topic || '综合';
+      document.getElementById('rEpDate').textContent = ep.date;
+      document.getElementById('rTitleEn').textContent = ep.title;
+      document.getElementById('rTitleZh').textContent = ep.titleZh || '';
+      document.getElementById('rSummaryEn').textContent = ep.summary || '';
+      document.getElementById('rSummaryZh').textContent = ep.summaryZh || '';
+
+      document.getElementById('rOfficialLink').href = ep.url || 'https://www.bbc.co.uk/learningenglish/english/features/6-minute-english';
+      const pdfLink = document.getElementById('rPdfLink');
+      if (ep.pdf) {
+        pdfLink.href = ep.pdf;
+        pdfLink.style.display = 'inline-flex';
+      } else {
+        pdfLink.style.display = 'none';
+      }
+
+      // Setup Audio & Karaoke Timeline
+      stopKaraokeLoop();
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      audioTriedFallback = false;
+      const audio = document.getElementById('bbcAudioEl');
+      audio.pause();
+      audio.src = ep.mp3 || ep.mp3Fallback || '';
+      audio.load();
+      document.getElementById('audioPlayBtn').textContent = '▶';
+      document.getElementById('flbPlayBtn').textContent = '▶';
+      document.getElementById('audioSeek').value = 0;
+      document.getElementById('audioCurTime').textContent = '00:00';
+      document.getElementById('audioDurTime').textContent = '06:15';
+      document.getElementById('audioStatusHint').textContent = '点击 ▶ 播放 BBC 官方原声（支持逐词歌词同步）';
+      document.getElementById('floatingLyricBar').classList.remove('show');
+
+      buildEpisodeTimeline(ep, 375);
+      updateSyncLabel(ep.id);
+
+      // Subtab badges
+      document.getElementById('subTabSentences').textContent = `🚂 长难句拆解 (${(ep.sentences || []).length})`;
+      document.getElementById('subTabVocab').textContent = `📚 核心词 & 口语 (${(ep.vocab || []).length + (ep.phrases || []).length})`;
+
+      renderReaderFlags(ep);
+      renderEpisodeQuiz(ep);
+      renderEpisodeTranscript(ep);
+      renderEpisodeSentences(ep);
+      renderEpisodeVocab(ep);
+      switchReaderSub(currentReaderSub);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function closeEpisodeReader() {
+      stopKaraokeLoop();
+      const audio = document.getElementById('bbcAudioEl');
+      if (audio) audio.pause();
+      currentEpisodeId = null;
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      document.getElementById('floatingLyricBar').classList.remove('show');
+      document.getElementById('bbcReaderView').style.display = 'none';
+      document.getElementById('bbcListView').style.display = 'block';
+      renderBbcList();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function navigateEpisode(delta) {
+      const idx = BBC_EPISODES.findIndex(e => e.id === currentEpisodeId);
+      const next = idx + delta;
+      if (next >= 0 && next < BBC_EPISODES.length) {
+        openEpisodeReader(BBC_EPISODES[next].id);
+      }
+    }
+
+    function renderReaderFlags(ep) {
+      const prog = state.bbcProgress[ep.id] || {};
+      const btnL = document.getElementById('btnToggleListened');
+      const btnS = document.getElementById('btnToggleStudied');
+      btnL.textContent = prog.listened ? '🎧 已听完 ✓' : '🎧 标记已听完';
+      btnL.className = prog.listened ? 'btn btn-primary btn-sm' : 'btn btn-soft btn-sm';
+      btnS.textContent = prog.studied ? '📖 已精读 ✓' : '📖 标记已精读';
+      btnS.className = prog.studied ? 'btn btn-emerald btn-sm' : 'btn btn-soft btn-sm';
+    }
+
+    function toggleEpisodeFlag(flag) {
+      if (!currentEpisodeId) return;
+      const prog = getEpProg(currentEpisodeId);
+      prog[flag] = !prog[flag];
+      saveState();
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (ep) renderReaderFlags(ep);
+      showToast(prog[flag] ? (flag === 'studied' ? '🎉 已标记本期精读完成！' : '🎧 已标记本期听完！') : '已取消标记');
+    }
+
+    function renderEpisodeQuiz(ep) {
+      document.getElementById('rQuizQEn').textContent = ep.question || '';
+      document.getElementById('rQuizQZh').textContent = ep.questionZh || '';
+      const prog = state.bbcProgress[ep.id] || {};
+      const picked = prog.quizPick;
+      const ansLetter = (ep.answer && ep.answer.letter || '').toLowerCase();
+
+      const optWrap = document.getElementById('rQuizOptions');
+      optWrap.innerHTML = (ep.options || []).map((optEn, idx) => {
+        const letter = ['a', 'b', 'c'][idx] || 'a';
+        const optZh = (ep.optionsZh && ep.optionsZh[idx]) ? ep.optionsZh[idx] : '';
+        let cls = 'quiz-opt';
+        if (picked) {
+          if (letter === ansLetter) cls += ' correct';
+          else if (letter === picked && picked !== ansLetter) cls += ' wrong';
+        }
+        return `
+          <button class="${cls}" onclick="pickQuizOption('${letter}')">
+            <span class="quiz-opt-en">${escapeHtml(optEn)}</span>
+            ${optZh ? `<span class="quiz-opt-zh">${escapeHtml(optZh)}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const fb = document.getElementById('rQuizFeedback');
+      if (picked && ep.answer) {
+        const right = picked === ansLetter;
+        fb.classList.add('show');
+        fb.innerHTML = `<strong>${right ? '✅ 答对啦！' : `💡 正确答案是 ${ansLetter.toUpperCase()})`}</strong> ${escapeHtml(ep.answer.explanationZh || '')}`;
+      } else {
+        fb.classList.remove('show');
+        fb.innerHTML = '';
+      }
+    }
+
+    function pickQuizOption(letter) {
+      if (!currentEpisodeId) return;
+      const prog = getEpProg(currentEpisodeId);
+      prog.quizPick = letter;
+      saveState();
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (ep) renderEpisodeQuiz(ep);
+    }
+
+    function revealQuizAnswer() {
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (!ep || !ep.answer) return;
+      pickQuizOption((ep.answer.letter || 'a').toLowerCase());
+    }
+
+    function switchReaderSub(sub) {
+      currentReaderSub = sub;
+      document.querySelectorAll('.subtab-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-sub') === sub);
+      });
+      document.getElementById('secTranscript').style.display = (sub === 'transcript' || sub === 'all') ? 'block' : 'none';
+      document.getElementById('secSentences').style.display = (sub === 'sentences' || sub === 'all') ? 'block' : 'none';
+      document.getElementById('secVocab').style.display = (sub === 'vocab' || sub === 'all') ? 'block' : 'none';
+    }
+
+    function getEpSync(epId) {
+      if (!state.bbcSync[epId]) {
+        state.bbcSync[epId] = { offset: 0, anchors: [] };
+      }
+      return state.bbcSync[epId];
+    }
+
+    function wordSpeechWeight(token) {
+      const clean = token.replace(/[^a-zA-Z0-9]/g, '');
+      let w = Math.max(1.2, Math.pow(Math.max(1, clean.length), 0.68));
+      if (/[.?!]["'”’]?$/.test(token)) w += 3.2;
+      else if (/[,;:–—]$/.test(token)) w += 1.4;
+      return w;
+    }
+
+    function buildEpisodeTimeline(ep, totalDuration) {
+      const turns = ep.transcript || [];
+      if (!turns.length) {
+        currentTimeline = [];
+        return;
+      }
+      const dur = (isFinite(totalDuration) && totalDuration > 30) ? totalDuration : 375;
+      const firstLine = (turns[0].en || '');
+      const hasClassicIntro = /6 Minute English/i.test(firstLine);
+      const introPad = hasClassicIntro ? 3.5 : 6.0;
+      const outroPad = 6.5;
+      const usable = Math.max(30, dur - introPad - outroPad);
+
+      // Compute raw cumulative weights for turns and words
+      const rawTurns = [];
+      let totalWeight = 0;
+      for (let i = 0; i < turns.length; i++) {
+        const tokens = (turns[i].en || '').trim().split(/\s+/).filter(Boolean);
+        const wordWeights = tokens.map(wordSpeechWeight);
+        const turnSpeechW = wordWeights.reduce((a, b) => a + b, 0) || 2;
+        const turnStartW = totalWeight;
+        totalWeight += turnSpeechW;
+        const turnEndW = totalWeight;
+        if (i < turns.length - 1) totalWeight += 3.5; // natural speaker switch pause
+        rawTurns.push({ tokens, wordWeights, turnSpeechW, turnStartW, turnEndW });
+      }
+
+      // Base estimated start time for every turn
+      const baseStarts = rawTurns.map(rt => introPad + (rt.turnStartW / totalWeight) * usable);
+      const baseEnds = rawTurns.map(rt => introPad + (rt.turnEndW / totalWeight) * usable);
+
+      // Apply user calibration anchors (piecewise linear interpolation) + global offset
+      const sync = state.bbcSync[ep.id] || { offset: 0, anchors: [] };
+      const offset = Number(sync.offset) || 0;
+      const anchors = Array.isArray(sync.anchors)
+        ? [...sync.anchors].filter(a => a.turnIdx >= 0 && a.turnIdx < turns.length).sort((a, b) => a.turnIdx - b.turnIdx)
+        : [];
+
+      function mapTime(tBase) {
+        if (!anchors.length) return Math.max(0, tBase + offset);
+        // Build control points (baseTime -> calibratedTime)
+        const pts = [{ b: 0, c: Math.max(0, 0 + (anchors[0].time - baseStarts[anchors[0].turnIdx])) }];
+        for (const a of anchors) {
+          const prevC = pts[pts.length - 1].c;
+          pts.push({ b: baseStarts[a.turnIdx], c: Math.max(prevC + 0.5, a.time) });
+        }
+        const lastA = anchors[anchors.length - 1];
+        const lastPtC = pts[pts.length - 1].c;
+        pts.push({ b: dur, c: Math.max(lastPtC + 1, Math.min(dur, dur + (lastA.time - baseStarts[lastA.turnIdx]) * 0.2)) });
+
+        for (let k = 0; k < pts.length - 1; k++) {
+          const p0 = pts[k], p1 = pts[k + 1];
+          if (tBase <= p1.b || k === pts.length - 2) {
+            const span = Math.max(0.001, p1.b - p0.b);
+            const ratio = (tBase - p0.b) / span;
+            return Math.max(0, p0.c + ratio * (p1.c - p0.c) + offset);
+          }
+        }
+        return Math.max(0, tBase + offset);
+      }
+
+      currentTimeline = rawTurns.map((rt, i) => {
+        const start = mapTime(baseStarts[i]);
+        const end = Math.max(start + 0.6, mapTime(baseEnds[i]));
+        const span = end - start;
+        let acc = 0;
+        const words = rt.tokens.map((tok, wi) => {
+          const wStart = start + (acc / rt.turnSpeechW) * span;
+          acc += rt.wordWeights[wi];
+          const wEnd = start + (acc / rt.turnSpeechW) * span;
+          return { text: tok, start: wStart, end: wEnd };
+        });
+        return { idx: i, start, end, words };
+      });
+    }
+
+    function updateSyncLabel(epId) {
+      const sync = state.bbcSync[epId] || { offset: 0, anchors: [] };
+      const off = Number(sync.offset) || 0;
+      const el = document.getElementById('lyricOffsetLabel');
+      if (el) {
+        const sign = off > 0 ? '+' : '';
+        const anchorTag = (sync.anchors && sync.anchors.length) ? `·${sync.anchors.length}锚` : '';
+        el.textContent = `${sign}${off.toFixed(1)}s${anchorTag}`;
+      }
+    }
+
+    function updateTranscriptTimestampLabels() {
+      currentTimeline.forEach((tl, i) => {
+        const tsEl = document.getElementById(`turn-ts-${i}`);
+        if (tsEl) tsEl.textContent = `▶ ${formatSec(tl.start)}`;
+      });
+    }
+
+    function extractVocabVariants(vocabList) {
+      if (!vocabHighlightOn || !vocabList || !vocabList.length) return [];
+      const out = [];
+      for (const v of vocabList) {
+        const raw = (v.word || '').replace(/\([^)]*\)/g, ' ').trim();
+        for (const part of raw.split('/')) {
+          const clean = part.replace(/\s+/g, ' ').trim();
+          if (clean.length >= 2) out.push(clean);
+        }
+      }
+      return out;
+    }
+
+    function buildVocabRegexes(vocabList) {
+      return extractVocabVariants(vocabList)
+        .filter(w => !w.includes(' '))
+        .map(w => {
+          const clean = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          try { return new RegExp(`^[^a-zA-Z]*(?:${clean}(?:s|es|ed|ing|d)?)[^a-zA-Z]*$`, 'i'); }
+          catch (e) { return null; }
+        })
+        .filter(Boolean);
+    }
+
+    function renderTurnWordsHtml(text, vocabList) {
+      const tokens = (text || '').trim().split(/\s+/).filter(Boolean);
+      const vocabWordSet = buildVocabRegexes(vocabList);
+      // Also check multi-word vocab phrases by lowercased text
+      const multiVocabs = extractVocabVariants(vocabList)
+        .map(w => w.toLowerCase())
+        .filter(w => w.includes(' '));
+      const lowerTokens = tokens.map(t => t.toLowerCase().replace(/^[^a-z0-9]+|[^a-z0-9]+$/gi, ''));
+      const multiHit = new Set();
+      for (const mv of multiVocabs) {
+        const parts = mv.split(/\s+/);
+        for (let i = 0; i <= lowerTokens.length - parts.length; i++) {
+          let ok = true;
+          for (let j = 0; j < parts.length; j++) {
+            if (!lowerTokens[i + j].startsWith(parts[j].slice(0, Math.max(3, parts[j].length - 1)))) { ok = false; break; }
+          }
+          if (ok) { for (let j = 0; j < parts.length; j++) multiHit.add(i + j); }
+        }
+      }
+
+      return tokens.map((tok, wi) => {
+        const isVocab = multiHit.has(wi) || vocabWordSet.some(re => re.test(tok));
+        const cls = isVocab ? 'k-word vocab-hl' : 'k-word';
+        return `<span class="${cls}" data-wi="${wi}">${escapeHtml(tok)}</span>`;
+      }).join(' ');
+    }
+
+    function renderEpisodeTranscript(ep) {
+      const list = document.getElementById('rTranscriptList');
+      list.className = `turn-list ${transcriptMode === 'en' ? 'mode-en' : ''} ${transcriptLargeFont ? 'font-lg' : ''}`;
+      document.getElementById('modeBilingualBtn').classList.toggle('active', transcriptMode === 'bilingual');
+      document.getElementById('modeEnBtn').classList.toggle('active', transcriptMode === 'en');
+      document.getElementById('btnToggleVocabHl').textContent = `✨ 核心词高亮: ${vocabHighlightOn ? '开' : '关'}`;
+      document.getElementById('btnToggleFontSize').textContent = `Aa 字体: ${transcriptLargeFont ? '大字' : '标准'}`;
+      const followBtn = document.getElementById('btnToggleFollow');
+      if (followBtn) {
+        followBtn.textContent = `🎤 歌词跟随: ${autoFollowLyrics ? '开' : '关'}`;
+        followBtn.className = autoFollowLyrics ? 'btn btn-primary btn-sm' : 'btn btn-soft btn-sm';
+      }
+
+      const speakerColorMap = {};
+      let colorIdx = 0;
+
+      list.innerHTML = (ep.transcript || []).map((t, i) => {
+        const sp = t.speaker || 'Host';
+        if (!(sp in speakerColorMap)) {
+          speakerColorMap[sp] = colorIdx % 4;
+          colorIdx++;
+        }
+        const spCls = `sp-${speakerColorMap[sp]}`;
+        const tl = currentTimeline[i];
+        const tsLabel = tl ? formatSec(tl.start) : '00:00';
+        const enHtml = renderTurnWordsHtml(t.en || '', ep.vocab);
+        return `
+          <div class="turn-item" id="turn-item-${i}" onclick="if(transcriptMode==='en') this.classList.toggle('peek')">
+            <div class="turn-head">
+              <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <button class="turn-ts" id="turn-ts-${i}" onclick="event.stopPropagation(); jumpToTurn(${i})" title="点击从这一段开始播放">▶ ${tsLabel}</button>
+                <span class="speaker-tag ${spCls}">${escapeHtml(sp)}</span>
+                <span class="playing-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+              </div>
+              <div class="turn-actions">
+                <button class="micro-btn" onclick="event.stopPropagation(); calibrateToTurn(${i})" title="当前刚好听到这句时点一下，立即精准对齐歌词">🎯 播到这</button>
+                <button class="micro-btn" onclick="event.stopPropagation(); speakByRef(${ep.epNum}, ${i}, 'turn')">🔊 朗读</button>
+                <button class="micro-btn" onclick="event.stopPropagation(); saveSnippetToNote(${ep.epNum}, ${i}, 'turn')">⭐ 存备忘录</button>
+              </div>
+            </div>
+            <div class="turn-en" id="turn-en-${i}">${enHtml}</div>
+            <div class="turn-zh">${escapeHtml(t.zh || '')}</div>
+            <div class="turn-progress-track"><div class="turn-progress-fill" id="turn-prog-${i}"></div></div>
+          </div>
+        `;
+      }).join('');
+
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      updateKaraokeFrame(false);
+    }
+
+    function toggleAutoFollow() {
+      autoFollowLyrics = !autoFollowLyrics;
+      const btn = document.getElementById('btnToggleFollow');
+      if (btn) {
+        btn.textContent = `🎤 歌词跟随: ${autoFollowLyrics ? '开' : '关'}`;
+        btn.className = autoFollowLyrics ? 'btn btn-primary btn-sm' : 'btn btn-soft btn-sm';
+      }
+      showToast(autoFollowLyrics ? '🎤 已开启歌词自动滚屏跟随' : '已暂停自动滚屏（仍保留高亮）');
+    }
+
+    function jumpToTurn(turnIdx) {
+      const tl = currentTimeline[turnIdx];
+      const audio = document.getElementById('bbcAudioEl');
+      if (!tl || !audio || !audio.src) return;
+      const targetTime = Math.max(0, tl.start);
+      const startPlay = () => {
+        audio.currentTime = targetTime;
+        audio.play().then(() => {
+          document.getElementById('audioPlayBtn').textContent = '⏸';
+          document.getElementById('flbPlayBtn').textContent = '⏸';
+          document.getElementById('audioStatusHint').textContent = '正在同步播放 BBC 原声';
+          startKaraokeLoop();
+        }).catch(() => {});
+      };
+      if (audio.readyState >= 1) {
+        startPlay();
+      } else {
+        audio.addEventListener('loadedmetadata', startPlay, { once: true });
+        audio.load();
+      }
+    }
+
+    function calibrateToTurn(turnIdx) {
+      if (!currentEpisodeId) return;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      const audio = document.getElementById('bbcAudioEl');
+      if (!ep || !audio) return;
+      if (audio.currentTime <= 0.1 && audio.paused) {
+        showToast('请先点 ▶ 播放音频，听到这句时再点「🎯 播到这」即可对齐！');
+        return;
+      }
+      const sync = getEpSync(ep.id);
+      sync.anchors = (sync.anchors || []).filter(a => a.turnIdx !== turnIdx);
+      sync.anchors.push({ turnIdx, time: audio.currentTime });
+      sync.anchors.sort((a, b) => a.turnIdx - b.turnIdx);
+      sync.offset = 0;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+
+      buildEpisodeTimeline(ep, audio.duration);
+      updateSyncLabel(ep.id);
+      updateTranscriptTimestampLabels();
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      updateKaraokeFrame(false);
+      showToast(`🎯 已精准锁定第 ${turnIdx + 1} 句到 ${formatSec(audio.currentTime)}！`);
+    }
+
+    function nudgeLyrics(deltaSec) {
+      if (!currentEpisodeId) return;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      const audio = document.getElementById('bbcAudioEl');
+      if (!ep) return;
+      const sync = getEpSync(ep.id);
+      sync.offset = Math.round(((Number(sync.offset) || 0) + deltaSec) * 10) / 10;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+      buildEpisodeTimeline(ep, audio ? audio.duration : 375);
+      updateSyncLabel(ep.id);
+      updateTranscriptTimestampLabels();
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      updateKaraokeFrame(false);
+      showToast(`🎤 歌词同步微调：${sync.offset > 0 ? '+' : ''}${sync.offset.toFixed(1)}s`);
+    }
+
+    function resetEpisodeSync() {
+      if (!currentEpisodeId) return;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      const audio = document.getElementById('bbcAudioEl');
+      if (!ep) return;
+      state.bbcSync[ep.id] = { offset: 0, anchors: [] };
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+      buildEpisodeTimeline(ep, audio ? audio.duration : 375);
+      updateSyncLabel(ep.id);
+      updateTranscriptTimestampLabels();
+      activeTurnIdx = -1;
+      activeWordIdx = -1;
+      updateKaraokeFrame(false);
+      showToast('已重置本期歌词同步时间');
+    }
+
+    function scrollToActiveTurn() {
+      switchTab('bbc6min');
+      if (currentReaderSub !== 'transcript' && currentReaderSub !== 'all') {
+        switchReaderSub('transcript');
+      }
+      const idx = activeTurnIdx >= 0 ? activeTurnIdx : 0;
+      const el = document.getElementById(`turn-item-${idx}`);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function startKaraokeLoop() {
+      stopKaraokeLoop();
+      function tick() {
+        const audio = document.getElementById('bbcAudioEl');
+        if (!audio || audio.paused || !currentEpisodeId) {
+          karaokeRafId = null;
+          return;
+        }
+        updateKaraokeFrame(true);
+        karaokeRafId = requestAnimationFrame(tick);
+      }
+      karaokeRafId = requestAnimationFrame(tick);
+    }
+
+    function stopKaraokeLoop() {
+      if (karaokeRafId) {
+        cancelAnimationFrame(karaokeRafId);
+        karaokeRafId = null;
+      }
+    }
+
+    function updateKaraokeFrame(allowAutoScroll) {
+      if (!currentEpisodeId || !currentTimeline.length) return;
+      const audio = document.getElementById('bbcAudioEl');
+      if (!audio) return;
+      const t = audio.currentTime;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (!ep) return;
+
+      // Show floating karaoke bar whenever user has started playback in reader view
+      const flb = document.getElementById('floatingLyricBar');
+      if (t > 0.05 || !audio.paused) {
+        flb.classList.add('show');
+      }
+
+      // Find current turn index
+      let foundTurn = -1;
+      for (let i = 0; i < currentTimeline.length; i++) {
+        const tl = currentTimeline[i];
+        const nextStart = (i + 1 < currentTimeline.length) ? currentTimeline[i + 1].start : tl.end + 10;
+        if (t >= tl.start && t < nextStart) {
+          foundTurn = i;
+          break;
+        }
+      }
+      if (foundTurn === -1 && t < currentTimeline[0].start && !audio.paused) {
+        // During opening jingle
+        document.getElementById('flbEn').textContent = '🎵 BBC 6 Minute English 开场音乐中...';
+        document.getElementById('flbZh').textContent = ep.titleZh || '';
+        return;
+      }
+      if (foundTurn === -1) return;
+
+      const tl = currentTimeline[foundTurn];
+      // Switch active turn highlight
+      if (foundTurn !== activeTurnIdx) {
+        if (activeTurnIdx >= 0) {
+          const prevEl = document.getElementById(`turn-item-${activeTurnIdx}`);
+          if (prevEl) {
+            prevEl.classList.remove('playing');
+            prevEl.querySelectorAll('.k-word.spoken, .k-word.current').forEach(w => w.classList.remove('spoken', 'current'));
+          }
+          const prevProg = document.getElementById(`turn-prog-${activeTurnIdx}`);
+          if (prevProg) prevProg.style.width = '0%';
+        }
+        activeTurnIdx = foundTurn;
+        activeWordIdx = -1;
+        const curEl = document.getElementById(`turn-item-${foundTurn}`);
+        if (curEl) {
+          curEl.classList.add('playing');
+          if (allowAutoScroll && autoFollowLyrics && (currentReaderSub === 'transcript' || currentReaderSub === 'all')) {
+            curEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+
+      // Update progress bar inside active turn
+      const pct = Math.max(0, Math.min(100, ((t - tl.start) / Math.max(0.1, tl.end - tl.start)) * 100));
+      const progEl = document.getElementById(`turn-prog-${foundTurn}`);
+      if (progEl) progEl.style.width = `${pct.toFixed(1)}%`;
+
+      // Find exact active word inside this turn
+      let foundWord = tl.words.length - 1;
+      for (let w = 0; w < tl.words.length; w++) {
+        if (t < tl.words[w].end) {
+          foundWord = w;
+          break;
+        }
+      }
+
+      if (foundWord !== activeWordIdx) {
+        activeWordIdx = foundWord;
+        const enContainer = document.getElementById(`turn-en-${foundTurn}`);
+        if (enContainer) {
+          const spans = enContainer.querySelectorAll('.k-word');
+          for (let w = 0; w < spans.length; w++) {
+            spans[w].classList.toggle('spoken', w < foundWord);
+            spans[w].classList.toggle('current', w === foundWord);
+          }
+        }
+
+        // Update floating karaoke bar with focused window around current word
+        const turnObj = ep.transcript[foundTurn];
+        const winStart = Math.max(0, foundWord - 4);
+        const winEnd = Math.min(tl.words.length, winStart + 14);
+        const flbHtml = tl.words.slice(winStart, winEnd).map((wObj, offset) => {
+          const realIdx = winStart + offset;
+          const esc = escapeHtml(wObj.text);
+          return realIdx === foundWord ? `<span class="flb-cur">${esc}</span>` : esc;
+        }).join(' ');
+        document.getElementById('flbEn').innerHTML = `<strong>${escapeHtml(turnObj.speaker)}:</strong> ${winStart > 0 ? '…' : ''}${flbHtml}${winEnd < tl.words.length ? '…' : ''}`;
+        document.getElementById('flbZh').textContent = turnObj.zh || '';
+      }
+    }
+
+    function setTranscriptMode(mode) {
+      transcriptMode = mode;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (ep) renderEpisodeTranscript(ep);
+    }
+
+    function toggleVocabHighlight() {
+      vocabHighlightOn = !vocabHighlightOn;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (ep) renderEpisodeTranscript(ep);
+    }
+
+    function toggleTranscriptFont() {
+      transcriptLargeFont = !transcriptLargeFont;
+      const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+      if (ep) renderEpisodeTranscript(ep);
+    }
+
+    function renderEpisodeSentences(ep) {
+      const wrap = document.getElementById('rSentencesList');
+      const sents = ep.sentences || [];
+      if (!sents.length) {
+        wrap.innerHTML = '<p style="color:var(--text-muted);">本期暂无长难句数据。</p>';
+        return;
+      }
+      wrap.innerHTML = sents.map((s, idx) => {
+        const carsHtml = (s.cars || []).map((c, ci) => `
+          <div class="car-item">
+            <div class="car-top">
+              <span class="hl-mod">车厢 ${ci + 1} · ${escapeHtml(c.hook || '修饰成分')}</span>
+              <span class="car-code">${escapeHtml(c.text || '')}</span>
+            </div>
+            <div style="color:var(--text-muted); margin-top:4px;">→ ${escapeHtml(c.noteZh || '')}</div>
+          </div>
+        `).join('');
+
+        return `
+          <div class="sentence-demo">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+              <span class="pill pill-blue">长难句 ${idx + 1}</span>
+              <div style="display:flex; gap:6px;">
+                <button class="micro-btn" onclick="speakByRef(${ep.epNum}, ${idx}, 'sentence')">🔊 朗读整句</button>
+                <button class="micro-btn" onclick="saveSnippetToNote(${ep.epNum}, ${idx}, 'sentence')">⭐ 存进备忘录</button>
+              </div>
+            </div>
+            <div class="sentence-en">${escapeHtml(s.en || '')}</div>
+            <div style="font-size:0.89rem; color:var(--text-muted); margin-bottom:10px;">📝 译文：${escapeHtml(s.zh || '')}</div>
+            <button class="btn btn-soft btn-sm" onclick="toggleDemo('ep-sent-${idx}')">👁️ 展开 / 收起「找车头 + 剥车厢」拆解</button>
+            <div class="demo-breakdown open" id="ep-sent-${idx}">
+              <div style="background:var(--surface); border-left:4px solid var(--primary); padding:10px 12px; border-radius:10px;">
+                <div><span class="hl-core">🚂 车头主干</span> <strong>${escapeHtml(s.coreEn || '')}</strong></div>
+                <div style="color:var(--text-muted); margin-top:4px; font-size:0.86rem;">核心意思：${escapeHtml(s.coreZh || '')}</div>
+              </div>
+              ${carsHtml}
+              ${s.tipZh ? `<div style="margin-top:10px; font-size:0.85rem;"><span class="hl-tip">💡 雅思/听力提分点</span> ${escapeHtml(s.tipZh)}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleAllEpisodeBreakdowns() {
+      const els = document.querySelectorAll('#rSentencesList .demo-breakdown');
+      const anyClosed = Array.from(els).some(el => !el.classList.contains('open'));
+      els.forEach(el => el.classList.toggle('open', anyClosed));
+    }
+
+    function renderEpisodeVocab(ep) {
+      const vGrid = document.getElementById('rVocabGrid');
+      vGrid.innerHTML = (ep.vocab || []).map((v, idx) => `
+        <div class="vocab-card">
+          <div>
+            <div class="vocab-word-row">
+              <span class="vocab-word">${escapeHtml(v.word || '')}</span>
+              ${v.pos ? `<span class="vocab-pos">${escapeHtml(v.pos)}</span>` : ''}
+            </div>
+            <div class="vocab-zh" style="margin-top:4px;">${escapeHtml(v.zh || '')}</div>
+            <div class="vocab-def-en" style="margin-top:3px;">BBC 释义：${escapeHtml(v.defEn || '')}</div>
+            ${v.exampleEn ? `<div class="vocab-ex" style="margin-top:8px;">“${escapeHtml(v.exampleEn)}”</div>` : ''}
+          </div>
+          <div style="display:flex; gap:6px; justify-content:flex-end;">
+            <button class="micro-btn" onclick="speakByRef(${ep.epNum}, ${idx}, 'vocab')">🔊 读词</button>
+            <button class="micro-btn" onclick="saveSnippetToNote(${ep.epNum}, ${idx}, 'vocab')">⭐ 存备忘录</button>
+          </div>
+        </div>
+      `).join('');
+
+      const pGrid = document.getElementById('rPhrasesGrid');
+      pGrid.innerHTML = (ep.phrases || []).map((p, idx) => `
+        <div class="vocab-card">
+          <div>
+            <div class="vocab-word" style="color:var(--emerald);">${escapeHtml(p.en || '')}</div>
+            <div class="vocab-zh" style="margin-top:4px;">${escapeHtml(p.zh || '')}</div>
+            ${p.contextEn ? `<div class="vocab-ex" style="border-left-color:var(--emerald); margin-top:8px;">“${escapeHtml(p.contextEn)}”</div>` : ''}
+          </div>
+          <div style="display:flex; gap:6px; justify-content:flex-end;">
+            <button class="micro-btn" onclick="speakByRef(${ep.epNum}, ${idx}, 'phrase')">🔊 朗读</button>
+            <button class="micro-btn" onclick="saveSnippetToNote(${ep.epNum}, ${idx}, 'phrase')">⭐ 存备忘录</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function saveSnippetToNote(epNum, idx, kind) {
+      const ep = BBC_EPISODES.find(e => e.epNum === epNum);
+      if (!ep) return;
+      let text = '';
+      if (kind === 'vocab') {
+        const v = ep.vocab[idx];
+        text = `[6Min #${epNum} 词汇] ${v.word} (${v.pos || ''}) — ${v.zh}\nBBC: ${v.defEn}${v.exampleEn ? `\n例句: ${v.exampleEn}` : ''}`;
+      } else if (kind === 'phrase') {
+        const p = ep.phrases[idx];
+        text = `[6Min #${epNum} 口语] ${p.en} — ${p.zh}${p.contextEn ? `\n原句: ${p.contextEn}` : ''}`;
+      } else if (kind === 'sentence') {
+        const s = ep.sentences[idx];
+        text = `[6Min #${epNum} 长难句] ${s.en}\n主干: ${s.coreEn}（${s.coreZh}）\n译文: ${s.zh}`;
+      } else if (kind === 'turn') {
+        const t = ep.transcript[idx];
+        text = `[6Min #${epNum} 原文] ${t.speaker}: ${t.en}\n译文: ${t.zh}`;
+      }
+      if (!text) return;
+      state.notes.unshift({ id: Date.now(), text, date: getTodayStr() });
+      saveState();
+      showToast('✅ 已收藏进「我的备忘录」');
+    }
+
+    function speakByRef(epNum, idx, kind) {
+      const ep = BBC_EPISODES.find(e => e.epNum === epNum);
+      if (!ep) return;
+      let text = '';
+      if (kind === 'turn' && ep.transcript && ep.transcript[idx]) text = ep.transcript[idx].en;
+      else if (kind === 'sentence' && ep.sentences && ep.sentences[idx]) text = ep.sentences[idx].en;
+      else if (kind === 'vocab' && ep.vocab && ep.vocab[idx]) text = ep.vocab[idx].word;
+      else if (kind === 'phrase' && ep.phrases && ep.phrases[idx]) text = ep.phrases[idx].en;
+      if (text) speakEnglish(text);
+    }
+
+    function speakEnglish(text) {
+      if (!('speechSynthesis' in window)) {
+        showToast('当前浏览器不支持语音朗读');
+        return;
+      }
+      try {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-GB';
+        u.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const gb = voices.find(v => /en[-_]GB/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+        if (gb) u.voice = gb;
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    }
+
+    // ============ AUDIO PLAYER EVENTS ============
+    function formatSec(sec) {
+      if (!isFinite(sec) || sec < 0) return '00:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function toggleAudioPlay() {
+      const audio = document.getElementById('bbcAudioEl');
+      if (!audio.src) return;
+      if (audio.paused) {
+        document.getElementById('audioStatusHint').textContent = '正在加载官方音频...';
+        audio.play().then(() => {
+          document.getElementById('audioPlayBtn').textContent = '⏸';
+          document.getElementById('flbPlayBtn').textContent = '⏸';
+          document.getElementById('audioStatusHint').textContent = '正在同步播放 BBC 官方原声';
+          startKaraokeLoop();
+        }).catch(() => {
+          document.getElementById('audioStatusHint').textContent = '音频加载失败，可点右侧「BBC 官网」听';
+        });
+      } else {
+        audio.pause();
+        stopKaraokeLoop();
+        document.getElementById('audioPlayBtn').textContent = '▶';
+        document.getElementById('flbPlayBtn').textContent = '▶';
+        document.getElementById('audioStatusHint').textContent = '已暂停';
+      }
+    }
+
+    function seekAudioBy(delta) {
+      const audio = document.getElementById('bbcAudioEl');
+      if (!isFinite(audio.duration)) return;
+      audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + delta));
+      updateKaraokeFrame(true);
+    }
+
+    function onAudioSeekInput(val) {
+      const audio = document.getElementById('bbcAudioEl');
+      if (!isFinite(audio.duration)) return;
+      audio.currentTime = (Number(val) / 100) * audio.duration;
+      updateKaraokeFrame(true);
+    }
+
+    function setAudioRate(rate) {
+      currentAudioRate = rate;
+      const audio = document.getElementById('bbcAudioEl');
+      audio.playbackRate = rate;
+      document.querySelectorAll('#speedGroup .speed-btn').forEach(b => {
+        b.classList.toggle('active', Number(b.getAttribute('data-rate')) === rate);
+      });
+    }
+
+    (function bindAudioListeners() {
+      const audio = document.getElementById('bbcAudioEl');
+      audio.addEventListener('loadedmetadata', () => {
+        audio.playbackRate = currentAudioRate;
+        document.getElementById('audioDurTime').textContent = formatSec(audio.duration);
+        if (currentEpisodeId) {
+          const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+          if (ep) {
+            buildEpisodeTimeline(ep, audio.duration);
+            updateTranscriptTimestampLabels();
+          }
+        }
+      });
+      audio.addEventListener('play', () => {
+        audio.playbackRate = currentAudioRate;
+        document.getElementById('audioPlayBtn').textContent = '⏸';
+        document.getElementById('flbPlayBtn').textContent = '⏸';
+        startKaraokeLoop();
+      });
+      audio.addEventListener('pause', () => {
+        document.getElementById('audioPlayBtn').textContent = '▶';
+        document.getElementById('flbPlayBtn').textContent = '▶';
+        stopKaraokeLoop();
+      });
+      audio.addEventListener('seeked', () => {
+        updateKaraokeFrame(true);
+      });
+      audio.addEventListener('timeupdate', () => {
+        document.getElementById('audioCurTime').textContent = formatSec(audio.currentTime);
+        if (isFinite(audio.duration) && audio.duration > 0) {
+          document.getElementById('audioSeek').value = (audio.currentTime / audio.duration) * 100;
+        }
+      });
+      audio.addEventListener('ended', () => {
+        stopKaraokeLoop();
+        document.getElementById('audioPlayBtn').textContent = '▶';
+        document.getElementById('flbPlayBtn').textContent = '▶';
+        document.getElementById('audioStatusHint').textContent = '🎉 本期听完啦！';
+        if (currentEpisodeId) {
+          const prog = getEpProg(currentEpisodeId);
+          if (!prog.listened) {
+            prog.listened = true;
+            saveState();
+            const ep = BBC_EPISODES.find(e => e.id === currentEpisodeId);
+            if (ep) renderReaderFlags(ep);
+            showToast('🎧 自动为你标记「本期已听完」！');
+          }
+        }
+      });
+      audio.addEventListener('error', () => {
+        const ep = currentEpisodeId ? BBC_EPISODES.find(e => e.id === currentEpisodeId) : null;
+        if (ep && !audioTriedFallback && ep.mp3Fallback && ep.mp3Fallback !== ep.mp3) {
+          audioTriedFallback = true;
+          audio.src = ep.mp3Fallback;
+          audio.load();
+          document.getElementById('audioStatusHint').textContent = '已自动切换备用音频源，点 ▶ 播放';
+          return;
+        }
+        stopKaraokeLoop();
+        document.getElementById('audioPlayBtn').textContent = '▶';
+        document.getElementById('flbPlayBtn').textContent = '▶';
+        document.getElementById('audioStatusHint').textContent = '音频直连受限，可点右侧「BBC 官网」或用 Apple Podcasts 听';
+      });
+    })();
+
+    // ============ VOCAB CHART & NOTES ============
     function addVocabRecord() {
       const date = document.getElementById('vocabDateInput').value || getTodayStr();
       const score = parseInt(document.getElementById('vocabScoreInput').value, 10);
@@ -1608,7 +3405,7 @@
           <td>${r.date}</td>
           <td><strong>${r.score.toLocaleString()}</strong></td>
           <td>${escapeHtml(r.note)}</td>
-          <td style="text-align:right;"><button class="btn btn-danger" style="padding:4px 9px;font-size:0.78rem;" onclick="deleteVocabRecord(${i})">删除</button></td>
+          <td style="text-align:right;"><button class="btn btn-danger btn-sm" onclick="deleteVocabRecord(${i})">删除</button></td>
         </tr>
       `).join('');
 
@@ -1622,6 +3419,7 @@
       state.notes.unshift({ id: Date.now(), text, date: getTodayStr() });
       input.value = '';
       saveState();
+      showToast('✅ 已存进备忘录');
     }
 
     function deleteNote(id) {
@@ -1631,23 +3429,24 @@
 
     function renderNotes() {
       const container = document.getElementById('notesList');
+      document.getElementById('notesCountPill').textContent = `${state.notes.length} 条记录`;
       if (!state.notes.length) {
-        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.86rem;">还没有保存记录。平时遇到的好表达或长难句随手贴进来吧！</p>';
+        container.innerHTML = '<p style="color:var(--text-muted);font-size:0.86rem;">还没有保存记录。平时遇到的好表达或长难句随手贴进来，或在 6Min 精读页一键收藏！</p>';
         return;
       }
       container.innerHTML = state.notes.map(n => `
         <div class="note-item">
           <div>
-            <div style="white-space:pre-wrap;font-size:0.9rem;">${escapeHtml(n.text)}</div>
+            <div style="white-space:pre-wrap;font-size:0.89rem;">${escapeHtml(n.text)}</div>
             <div class="note-meta">记录于 ${n.date}</div>
           </div>
-          <button class="btn btn-danger" style="padding:5px 10px;font-size:0.78rem;flex-shrink:0;" onclick="deleteNote(${n.id})">删除</button>
+          <button class="btn btn-danger btn-sm" style="flex-shrink:0;" onclick="deleteNote(${n.id})">删除</button>
         </div>
       `).join('');
     }
 
     function escapeHtml(str) {
-      return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+      return String(str || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
     }
 
     function exportData() {
@@ -1668,6 +3467,8 @@
         try {
           const data = JSON.parse(e.target.result);
           state = Object.assign(defaultState(), data);
+          if (!state.bbcProgress || typeof state.bbcProgress !== 'object') state.bbcProgress = {};
+          if (!state.bbcSync || typeof state.bbcSync !== 'object') state.bbcSync = {};
           saveState();
           alert('进度备份导入成功！');
         } catch (err) {
@@ -1678,7 +3479,7 @@
     }
 
     function resetAll() {
-      if (confirm('确定要清空所有打卡进度、词汇记录和备忘录吗？建议先导出备份。')) {
+      if (confirm('确定要清空所有打卡进度、BBC 精读记录、词汇曲线和备忘录吗？建议先导出备份。')) {
         state = defaultState();
         saveState();
       }
@@ -1730,7 +3531,8 @@
 
       const stats = computeStats();
       document.getElementById('statToday').textContent = `${stats.todayCount} / 4${stats.mvp ? ' ⚡' : ''}`;
-      document.getElementById('statTotalDays').textContent = `${stats.totalDays} 天`;
+      document.getElementById('statBbcDone').textContent = `${stats.bbcStudied} / ${BBC_EPISODES.length || 30}`;
+      document.getElementById('statTotalDaysInline').textContent = stats.totalDays;
       document.getElementById('statStreak').textContent = `${stats.streak} 天`;
       document.getElementById('statVocab').textContent = stats.latestVocab.toLocaleString();
       document.getElementById('streakHint').textContent = stats.streak > 0 ? `🔥 已连续坚持 ${stats.streak} 天` : '明天从 6 分钟开始第一天！';
@@ -1738,6 +3540,7 @@
       renderStreakBar();
       renderVocabChart();
       renderNotes();
+      if (!currentEpisodeId) renderBbcList();
     }
 
     renderAll();
